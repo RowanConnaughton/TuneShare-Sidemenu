@@ -18,7 +18,7 @@ export class HomePage {
 //   showAlert() {
 //     let alert = this.alertCtrl.create({
 //       title: 'Please Login!',
-//       subTitle: 'Please login using you Spotify Username and Pasword',
+//       subTitle: 'Please login using you Spotify Username and Password',
 //       buttons: ['OK']
 //     });
 //     alert.present();
