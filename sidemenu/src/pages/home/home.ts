@@ -1,6 +1,6 @@
 import { Component } from '@angular/core';
 import { NavController } from 'ionic-angular';
-import { AlertController } from 'ionic-angular';
+// import { AlertController } from 'ionic-angular';
 
 
 @Component({
@@ -18,7 +18,7 @@ export class HomePage {
 //   showAlert() {
 //     let alert = this.alertCtrl.create({
 //       title: 'Please Login!',
-//       subTitle: 'Please login using you Spotify Username and Password',
+//       subTitle: 'Please login using you Spotify Username and Pasword',
 //       buttons: ['OK']
 //     });
 //     alert.present();
