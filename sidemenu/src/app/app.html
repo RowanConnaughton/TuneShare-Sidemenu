@@ -1,0 +1,36 @@
+<ion-menu [content]="mainContent">
+  <ion-content id="side-menu21" class="sidemenu-gradient">
+    <div class="spacer" style="width:268px;height:35px;" id="menu-spacer1"></div>
+    <img src="assets/img/GGaGpKNLS5OEXsMbnJIO_logo.png" style="display:block;width:40%;height:auto;margin-left:auto;margin-right:auto;" />
+    <div class="spacer" style="width:268px;height:35px;" id="menu-spacer4"></div>
+    <ion-list id="menu-list1">
+      <ion-item color="none" menuClose="" on-click="goToHome()" id="menu-list-item1" class="side-menu-item">
+        <ion-icon name="home" item-left></ion-icon>
+        Home
+      </ion-item>
+      <ion-item color="none" menuClose="" on-click="goToFavorites()" id="menu-list-item2" class="side-menu-item">
+        <ion-icon name="heart" item-left></ion-icon>
+        Favorites
+      </ion-item>
+      <ion-item color="none" menuClose="" on-click="goToPlaylist()" id="menu-list-item3" class="side-menu-item">
+        <ion-icon name="musical-notes" item-left></ion-icon>
+        Playlist
+      </ion-item>
+      <ion-item color="none" menuClose="" on-click="goToHistory()" id="menu-list-item4" class="side-menu-item">
+        <ion-icon name="folder" item-left></ion-icon>
+        History
+      </ion-item>
+      <ion-item color="none" menuClose="" on-click="goToAbout()" id="menu-list-item5" class="side-menu-item">
+        <ion-icon name="book" item-left></ion-icon>
+        About
+      </ion-item>
+      <ion-item color="none" menuClose="" on-click="goToContact()" id="menu-list-item6" class="side-menu-item">
+        <ion-icon name="contact" item-left></ion-icon>
+        Contact
+      </ion-item>
+    </ion-list>
+  </ion-content>
+</ion-menu>
+
+<ion-nav #mainContent [root]="rootPage"></ion-nav>
+
