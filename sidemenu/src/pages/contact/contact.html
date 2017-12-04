@@ -1,5 +1,5 @@
 <ion-header>
-  <ion-navbar >
+  <ion-navbar>
     <button ion-button menuToggle>
       <ion-icon name="menu"></ion-icon>
     </button>
@@ -8,4 +8,53 @@
     </ion-title>
   </ion-navbar>
 </ion-header>
-<ion-content padding id="page6"></ion-content>
+<ion-content padding id="page6">
+
+  <form [formGroup]="rForm" (ngSubmit)="addPost(rForm.value)" novalidate>
+    <h1>Contact Form</h1>
+    
+    
+    <ion-item  class="form-group">
+        <ion-label floating for="firstName">First Name</ion-label>
+        <ion-input formControlName="firstName" id="firstName" type="text" class="form-control"></ion-input>
+  
+        <ion-item class="alert alert-danger" *ngIf="rForm.controls['firstName'].touched && !rForm.controls['firstName'].valid">
+          <p>Last Name is required</p>
+        </ion-item>
+      </ion-item>
+
+      
+
+    <ion-item  class="form-group">
+      <ion-label floating for="lastName">Last Name</ion-label>
+      <ion-input formControlName="lastName" id="lastName" type="text" class="form-control"></ion-input>
+
+      <ion-item class="alert alert-danger" *ngIf="rForm.controls['lastName'].touched && !rForm.controls['lastName'].valid">
+        <p>Last Name is required</p>
+      </ion-item>
+    </ion-item>
+
+    <ion-item class="form-group">
+      <ion-label floating for="email">Email</ion-label>
+      <ion-input formControlName="email" id="email" type="text" class="form-control"></ion-input>
+
+      <ion-item class="alert alert-danger" *ngIf="rForm.controls['email'].touched && !rForm.controls['email'].valid">
+        <p>Email is required</p>
+      </ion-item>
+    </ion-item>
+
+    <ion-item class="form-group">
+      <ion-label floating for="message">Message</ion-label>
+      <ion-textarea formControlName="message" id="message" cols="30" rows="10" class="form-control"></ion-textarea>
+
+      <ion-item class="alert alert-danger" *ngIf="rForm.controls['message'].touched && !rForm.controls['message'].valid">
+        <p>Message is required</p>
+      </ion-item>
+    </ion-item>
+    <button ion-button full color="secondary" type="submit" style="margin-top: 20px;" value="Submit Form" [disabled]="!rForm.valid">Send Message</button>
+
+  </form>
+
+
+
+</ion-content>
