@@ -10,8 +10,12 @@ import { AboutPage } from '../pages/about/about';
 import { ContactPage } from '../pages/contact/contact';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 
+
+
 import { StatusBar } from '@ionic-native/status-bar';
 import { SplashScreen } from '@ionic-native/splash-screen';
+
+
 
 @NgModule({
   declarations: [
@@ -22,12 +26,14 @@ import { SplashScreen } from '@ionic-native/splash-screen';
     HistoryPage,
     AboutPage,
     ContactPage
+    
   ],
   imports: [
     BrowserModule,
     IonicModule.forRoot(MyApp),
     FormsModule,
-    ReactiveFormsModule
+    ReactiveFormsModule,
+    
   ],
   bootstrap: [IonicApp],
   entryComponents: [
