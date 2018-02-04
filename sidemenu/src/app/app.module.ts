@@ -9,7 +9,7 @@ import { HistoryPage } from '../pages/history/history';
 import { AboutPage } from '../pages/about/about';
 import { ContactPage } from '../pages/contact/contact';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
-
+import { LocationStrategy, PathLocationStrategy } from '@angular/common';
 
 
 import { StatusBar } from '@ionic-native/status-bar';
@@ -48,7 +48,8 @@ import { SplashScreen } from '@ionic-native/splash-screen';
   providers: [
     StatusBar,
     SplashScreen,
-    {provide: ErrorHandler, useClass: IonicErrorHandler}
+    {provide: ErrorHandler, useClass: IonicErrorHandler},
+    { provide: LocationStrategy, useClass: PathLocationStrategy }
   ]
 })
 export class AppModule {}
