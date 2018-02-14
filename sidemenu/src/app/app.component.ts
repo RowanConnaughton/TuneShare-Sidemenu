@@ -12,6 +12,7 @@ import { ContactPage } from '../pages/contact/contact';
 import { HomePage } from '../pages/home/home';
 import { ArticleComponent } from '../pages/article/article.component';
 // import { Article } from '../pages/article/article.model';
+// import { CallbackPage } from '../pages/callback/callback';
 
 
 
@@ -22,6 +23,7 @@ export class MyApp {
   @ViewChild(Nav) navCtrl: Nav;
     rootPage:any = HomePage;
     // articles:Article[];
+
 
   constructor(platform: Platform, statusBar: StatusBar, splashScreen: SplashScreen) {
     // this.articles = [
@@ -66,8 +68,14 @@ export class MyApp {
   }goToContact(params){
     if (!params) params = {};
     this.navCtrl.setRoot(ContactPage);
-  }goToArticle(params){
+  }
+  goToArticle(params){
     if (!params) params = {};
     this.navCtrl.setRoot(ArticleComponent);
   }
+  // }goToCallback(params){
+  //   if (!params) params = {};
+  //   this.navCtrl.setRoot(CallbackPage);
+  // }
+  
 }
