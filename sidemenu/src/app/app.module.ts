@@ -14,7 +14,8 @@ import {LocationStrategy, PathLocationStrategy, APP_BASE_HREF } from '@angular/c
 
 import { StatusBar } from '@ionic-native/status-bar';
 import { SplashScreen } from '@ionic-native/splash-screen';
-//import { CallbackPage } from '../pages/callback/callback';
+
+
 
 
 export const deepLinkConfig: DeepLinkConfig = {
@@ -30,6 +31,11 @@ export const deepLinkConfig: DeepLinkConfig = {
 };
 
 
+import { ArticleComponent } from '../pages/article/article.component';
+// import { show-article} from '../pages/show-article/show-article';
+
+
+
 
 @NgModule({
   declarations: [
@@ -40,17 +46,20 @@ export const deepLinkConfig: DeepLinkConfig = {
     HistoryPage,
     AboutPage,
 
-     ContactPage
-
+    ContactPage,
+    ArticleComponent
+   
     
   ],
   imports: [
     BrowserModule,
+
     IonicModule.forRoot(MyApp, {
      locationStrategy: 'path'
   }, deepLinkConfig),
     FormsModule,
     ReactiveFormsModule,
+
     
   ],
   bootstrap: [IonicApp],
@@ -61,8 +70,10 @@ export const deepLinkConfig: DeepLinkConfig = {
     PlaylistPage,
     HistoryPage,
     AboutPage,
-    ContactPage
-   // CallbackPage
+
+    ContactPage,
+    ArticleComponent
+  
   ],
   providers: [
     StatusBar,
