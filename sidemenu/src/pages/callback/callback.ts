@@ -1,6 +1,6 @@
 import { Component, AfterViewInit } from '@angular/core';
 import { IonicPage, NavController, NavParams } from 'ionic-angular';
-
+//import * as $ from 'jquery';
 /**
  * Generated class for the CallbackPage page.
  *
@@ -18,21 +18,19 @@ export class CallbackPage implements AfterViewInit {
   ngAfterViewInit(){
    window.alert("ngAfterViewInIt code works!");
 
-    // function getParameterByName(code, url) {
-    //   if (!url) url = window.location.href;
-    //   code = code.replace(/[\[\]]/g, "\\$&");
-    //   var regex = new RegExp("[?&]" + code + "(=([^&#]*)|&|#|$)"),
-    //       results = regex.exec(url);
-    //   if (!results) return null;
-    //   if (!results[2]) return '';
-    //   return decodeURIComponent(results[2].replace(/\+/g, " "));
-    //   }
-  
   
   // do ajax
   //   do ajax success 
   
-  //     var code = getParameterByName('code'); 
+  //     var code = function getParameterByName(code, url) {
+  //       if (!url) url = window.location.href;
+  //       code = code.replace(/[\[\]]/g, "\\$&");
+  //       var regex = new RegExp("[?&]" + code + "(=([^&#]*)|&|#|$)"),
+  //           results = regex.exec(url);
+  //       if (!results) return null;
+  //       if (!results[2]) return '';
+  //       return decodeURIComponent(results[2].replace(/\+/g, " "));
+  //       }
   
   //     $.ajax(
   //     {
