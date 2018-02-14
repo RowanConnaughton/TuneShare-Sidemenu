@@ -14,6 +14,7 @@ import { LocationStrategy, PathLocationStrategy } from '@angular/common';
 
 import { StatusBar } from '@ionic-native/status-bar';
 import { SplashScreen } from '@ionic-native/splash-screen';
+import { CallbackPage } from '../pages/callback/callback';
 
 
 
@@ -25,7 +26,8 @@ import { SplashScreen } from '@ionic-native/splash-screen';
     PlaylistPage,
     HistoryPage,
     AboutPage,
-    ContactPage
+    ContactPage,
+    CallbackPage
     
   ],
   imports: [
@@ -43,7 +45,8 @@ import { SplashScreen } from '@ionic-native/splash-screen';
     PlaylistPage,
     HistoryPage,
     AboutPage,
-    ContactPage
+    ContactPage,
+    CallbackPage
   ],
   providers: [
     StatusBar,

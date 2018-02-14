@@ -11,6 +11,7 @@ import { ContactPage } from '../pages/contact/contact';
 
 
 import { HomePage } from '../pages/home/home';
+import { CallbackPage } from '../pages/callback/callback';
 
 
 
@@ -48,5 +49,9 @@ export class MyApp {
   }goToContact(params){
     if (!params) params = {};
     this.navCtrl.setRoot(ContactPage);
+  }goToCallback(params){
+    if (!params) params = {};
+    this.navCtrl.setRoot(CallbackPage);
   }
+  
 }
