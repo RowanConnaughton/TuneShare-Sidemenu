@@ -9,15 +9,11 @@ import { HistoryPage } from '../pages/history/history';
 import { AboutPage } from '../pages/about/about';
 import { ContactPage } from '../pages/contact/contact';
 
-<<<<<<< HEAD
 
 
-=======
-import { HomePage } from '../pages/home/home';
 import { ArticleComponent } from '../pages/article/article.component';
 // import { Article } from '../pages/article/article.model';
-// import { CallbackPage } from '../pages/callback/callback';
->>>>>>> d5046de2bea1682dea32b4203fceaf8917839021
+
 
 
 
@@ -26,12 +22,12 @@ import { ArticleComponent } from '../pages/article/article.component';
 })
 export class MyApp {
   @ViewChild(Nav) navCtrl: Nav;
-<<<<<<< HEAD
+
     rootPage = HomePage;
-=======
-    rootPage:any = HomePage;
+
+    
     // articles:Article[];
->>>>>>> d5046de2bea1682dea32b4203fceaf8917839021
+
 
 
   constructor(platform: Platform, statusBar: StatusBar, splashScreen: SplashScreen) {
@@ -46,7 +42,7 @@ export class MyApp {
       splashScreen.hide();
     });
   }
-<<<<<<< HEAD
+
   goToHome(){
     
     this.navCtrl.push('HomePage');
@@ -70,13 +66,11 @@ export class MyApp {
   goToContact(){
     this.navCtrl.push('ContactPage');
   }
+  goToArticle(){
+    this.navCtrl.push('ArticlePage');
+  }
 
-  /*goToContact(params){
-    if (!params) params = {};
-    this.navCtrl.setRoot(ContactPage);
-
-  }*/
-=======
+ 
 
   // addArticle(title: HTMLInputElement, link: HTMLInputElement): boolean{
   //   console.log(`Adding article title:${title.value} and link: ${link.value}`);
@@ -90,33 +84,4 @@ export class MyApp {
   //   return this.articles.sort((a:Article, b:Article) => b.votes - a.votes)
   // }
 
-  goToHome(params){
-    if (!params) params = {};
-    this.navCtrl.setRoot(HomePage);
-  }goToFavorites(params){
-    if (!params) params = {};
-    this.navCtrl.setRoot(FavoritesPage);
-  }goToPlaylist(params){
-    if (!params) params = {};
-    this.navCtrl.setRoot(PlaylistPage);
-  }goToHistory(params){
-    if (!params) params = {};
-    this.navCtrl.setRoot(HistoryPage);
-  }goToAbout(params){
-    if (!params) params = {};
-    this.navCtrl.setRoot(AboutPage);
-  }goToContact(params){
-    if (!params) params = {};
-    this.navCtrl.setRoot(ContactPage);
-  }
-  goToArticle(params){
-    if (!params) params = {};
-    this.navCtrl.setRoot(ArticleComponent);
-  }
-  // }goToCallback(params){
-  //   if (!params) params = {};
-  //   this.navCtrl.setRoot(CallbackPage);
-  // }
-  
->>>>>>> d5046de2bea1682dea32b4203fceaf8917839021
 }

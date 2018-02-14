@@ -25,8 +25,8 @@ export const deepLinkConfig: DeepLinkConfig = {
     {component: FavoritesPage, name: 'FavoritesPage', segment: 'favorites'},
     {component: PlaylistPage, name: 'PlaylistPage', segment: 'playlist'},
     {component: HistoryPage, name: 'HistoryPage', segment: 'history'},
-    {component: ContactPage, name: 'ContactPage', segment: 'contact'}
-   // {component: CallbackPage, name: 'CallbackPage', segment: 'callback'}
+    {component: ContactPage, name: 'ContactPage', segment: 'contact'},
+   {component: ArticleComponent, name: 'ArticalPage', segment: 'artical'}
   ]
 };
 
