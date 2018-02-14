@@ -2,7 +2,7 @@ import { Component, ViewChild } from '@angular/core';
 import { Platform, Nav } from 'ionic-angular';
 import { StatusBar } from '@ionic-native/status-bar';
 import { SplashScreen } from '@ionic-native/splash-screen';
-
+import {HomePage} from '../pages/home/home';
 import { FavoritesPage } from '../pages/favorites/favorites';
 import { PlaylistPage } from '../pages/playlist/playlist';
 import { HistoryPage } from '../pages/history/history';
@@ -10,7 +10,7 @@ import { AboutPage } from '../pages/about/about';
 import { ContactPage } from '../pages/contact/contact';
 
 
-import { HomePage } from '../pages/home/home';
+
 
 
 
@@ -19,7 +19,7 @@ import { HomePage } from '../pages/home/home';
 })
 export class MyApp {
   @ViewChild(Nav) navCtrl: Nav;
-    rootPage:any = HomePage;
+    rootPage = HomePage;
 
 
   constructor(platform: Platform, statusBar: StatusBar, splashScreen: SplashScreen) {
@@ -30,23 +30,32 @@ export class MyApp {
       splashScreen.hide();
     });
   }
-  goToHome(params){
-    if (!params) params = {};
-    this.navCtrl.setRoot(HomePage);
-  }goToFavorites(params){
-    if (!params) params = {};
-    this.navCtrl.setRoot(FavoritesPage);
-  }goToPlaylist(params){
-    if (!params) params = {};
-    this.navCtrl.setRoot(PlaylistPage);
-  }goToHistory(params){
-    if (!params) params = {};
-    this.navCtrl.setRoot(HistoryPage);
-  }goToAbout(params){
-    if (!params) params = {};
-    this.navCtrl.setRoot(AboutPage);
-  }goToContact(params){
+  goToHome(){
+    
+    this.navCtrl.push('HomePage');
+  }
+  goToFavorites(){
+    
+    this.navCtrl.push('FavoritesPage');
+  }
+  goToPlaylist(){
+    
+    this.navCtrl.push('PlaylistPage');
+  }
+  goToHistory(){
+    
+    this.navCtrl.push('HistoryPage');
+  }
+  goToAbout(){
+    
+    this.navCtrl.push('AboutPage');
+  }
+  goToContact(){
+    this.navCtrl.push('ContactPage');
+  }
+
+  /*goToContact(params){
     if (!params) params = {};
     this.navCtrl.setRoot(ContactPage);
-  }
+  }*/
 }

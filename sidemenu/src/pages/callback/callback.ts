@@ -8,7 +8,11 @@ import { IonicPage, NavController, NavParams } from 'ionic-angular';
  * Ionic pages and navigation.
  */
 
-@IonicPage()
+@IonicPage({
+  name: 'callback',
+  segment: 'callback'
+})
+
 @Component({
   selector: 'page-callback',
   templateUrl: 'callback.html',
