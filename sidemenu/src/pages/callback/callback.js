@@ -9,7 +9,7 @@ var cookieParser = require('cookie-parser');
 
 var client_id = '64f2608e81b54dd6b67e8340e8b548b9'; // Your client id
 var client_secret = '2e07d8bab06c4da9beba81a7f5addfe6'; // Your secret
-var redirect_uri = 'http://localhost:8100/#/callback'; // Your redirect uri
+var redirect_uri = 'http://localhost:8100/callback'; // Your redirect uri
 
 app.get('/callback', function(req, res) {
     
@@ -21,7 +21,7 @@ app.get('/callback', function(req, res) {
       var storedState = req.cookies ? req.cookies[stateKey] : null;
     
       if (state === null || state !== storedState) {
-        res.redirect('/#' +
+        res.redirect('/' +
           querystring.stringify({
             error: 'state_mismatch'
           }));
@@ -58,13 +58,13 @@ app.get('/callback', function(req, res) {
             });
     
             // we can also pass the token to the browser to make requests from there
-            res.redirect('/#' +
+            res.redirect('/' +
               querystring.stringify({
                 access_token: access_token,
                 refresh_token: refresh_token
               }));
           } else {
-            res.redirect('/#' +
+            res.redirect('/' +
               querystring.stringify({
                 error: 'invalid_token'
               }));

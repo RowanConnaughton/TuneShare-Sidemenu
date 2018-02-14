@@ -1,5 +1,11 @@
 import { Component } from '@angular/core';
-import { NavController } from 'ionic-angular';
+import { /*IonicPage,*/ NavController } from 'ionic-angular';
+
+
+//@IonicPage({
+  //name: 'favourites',
+  //segment: 'favourites'
+//})
 
 @Component({
   selector: 'page-favorites',
@@ -9,5 +15,7 @@ export class FavoritesPage {
 
   constructor(public navCtrl: NavController) {
   }
+  
+
   
 }

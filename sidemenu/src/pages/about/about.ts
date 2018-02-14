@@ -9,6 +9,10 @@ import { FormControl, Validators, FormGroup } from '@angular/forms';
 import { HomePage } from '../home/home';
 
 
+//@IonicPage({
+ // name: 'about'
+//})
+
 @Component({
   selector: 'page-about',
   templateUrl: 'about.html'
