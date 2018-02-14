@@ -8,12 +8,15 @@ import { PlaylistPage } from '../pages/playlist/playlist';
 import { HistoryPage } from '../pages/history/history';
 import { AboutPage } from '../pages/about/about';
 import { ContactPage } from '../pages/contact/contact';
-import { FormsModule, ReactiveFormsModule } from '@angular/forms';
+// import { FormsModule, ReactiveFormsModule } from '@angular/forms';
+// import { HttpModule } from '@angular/http';
 
 
 
 import { StatusBar } from '@ionic-native/status-bar';
 import { SplashScreen } from '@ionic-native/splash-screen';
+import { ArticleComponent } from '../pages/article/article.component';
+// import { show-article} from '../pages/show-article/show-article';
 
 
 
@@ -25,14 +28,15 @@ import { SplashScreen } from '@ionic-native/splash-screen';
     PlaylistPage,
     HistoryPage,
     AboutPage,
-    ContactPage
+    ContactPage,
+    ArticleComponent
     
   ],
   imports: [
     BrowserModule,
-    IonicModule.forRoot(MyApp),
-    FormsModule,
-    ReactiveFormsModule,
+    IonicModule.forRoot(MyApp)
+    // FormsModule,
+    // ReactiveFormsModule,
     
   ],
   bootstrap: [IonicApp],
@@ -43,7 +47,8 @@ import { SplashScreen } from '@ionic-native/splash-screen';
     PlaylistPage,
     HistoryPage,
     AboutPage,
-    ContactPage
+    ContactPage,
+    ArticleComponent
   ],
   providers: [
     StatusBar,
