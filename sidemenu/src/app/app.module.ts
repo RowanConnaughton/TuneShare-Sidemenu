@@ -10,10 +10,11 @@ import { AboutPage } from '../pages/about/about';
 import { ContactPage } from '../pages/contact/contact';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import {LocationStrategy, PathLocationStrategy, APP_BASE_HREF } from '@angular/common';
-import{CallbackPage} from '../pages/callback/callback';
+//import{CallbackPage} from '../pages/callback/callback';
 
 import { StatusBar } from '@ionic-native/status-bar';
 import { SplashScreen } from '@ionic-native/splash-screen';
+//import { CallbackPage } from '../pages/callback/callback';
 
 
 export const deepLinkConfig: DeepLinkConfig = {
@@ -23,8 +24,8 @@ export const deepLinkConfig: DeepLinkConfig = {
     {component: FavoritesPage, name: 'FavoritesPage', segment: 'favorites'},
     {component: PlaylistPage, name: 'PlaylistPage', segment: 'playlist'},
     {component: HistoryPage, name: 'HistoryPage', segment: 'history'},
-    {component: ContactPage, name: 'ContactPage', segment: 'contact'},
-    {component: CallbackPage, name: 'CallbackPage', segment: 'callback'}
+    {component: ContactPage, name: 'ContactPage', segment: 'contact'}
+   // {component: CallbackPage, name: 'CallbackPage', segment: 'callback'}
   ]
 };
 
@@ -38,7 +39,9 @@ export const deepLinkConfig: DeepLinkConfig = {
     PlaylistPage,
     HistoryPage,
     AboutPage,
+
      ContactPage
+
     
   ],
   imports: [
@@ -59,6 +62,7 @@ export const deepLinkConfig: DeepLinkConfig = {
     HistoryPage,
     AboutPage,
     ContactPage
+   // CallbackPage
   ],
   providers: [
     StatusBar,

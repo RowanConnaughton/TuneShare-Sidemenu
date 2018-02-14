@@ -57,5 +57,6 @@ export class MyApp {
   /*goToContact(params){
     if (!params) params = {};
     this.navCtrl.setRoot(ContactPage);
+
   }*/
 }
