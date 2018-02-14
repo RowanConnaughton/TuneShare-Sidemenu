@@ -1,6 +1,6 @@
 import { NgModule, ErrorHandler } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
-import { IonicApp, IonicModule, IonicErrorHandler } from 'ionic-angular';
+import { IonicApp, IonicModule, IonicErrorHandler, DeepLinkConfig } from 'ionic-angular';
 import { MyApp } from './app.component';
 import { HomePage } from '../pages/home/home';
 import { FavoritesPage } from '../pages/favorites/favorites';
@@ -9,50 +9,91 @@ import { HistoryPage } from '../pages/history/history';
 import { AboutPage } from '../pages/about/about';
 import { ContactPage } from '../pages/contact/contact';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
-import { LocationStrategy, PathLocationStrategy } from '@angular/common';
-
+import {LocationStrategy, PathLocationStrategy, APP_BASE_HREF } from '@angular/common';
+//import{CallbackPage} from '../pages/callback/callback';
 
 import { StatusBar } from '@ionic-native/status-bar';
 import { SplashScreen } from '@ionic-native/splash-screen';
-import { CallbackPage } from '../pages/callback/callback';
 
+
+
+
+export const deepLinkConfig: DeepLinkConfig = {
+  links: [
+    {component: HomePage, name: 'HomePage', segment: 'home' },
+    {component: AboutPage, name: 'AboutPage', segment: 'about' },
+    {component: FavoritesPage, name: 'FavoritesPage', segment: 'favorites'},
+    {component: PlaylistPage, name: 'PlaylistPage', segment: 'playlist'},
+    {component: HistoryPage, name: 'HistoryPage', segment: 'history'},
+    {component: ContactPage, name: 'ContactPage', segment: 'contact'},
+   {component: ArticleComponent, name: 'ArticalPage', segment: 'artical'}
+  ]
+};
+
+
+import { ArticleComponent } from '../pages/article/article.component';
+// import { show-article} from '../pages/show-article/show-article';
+<<<<<<< HEAD
+import { CallbackPage } from '../pages/callback/callback';
+import { ShowArticleComponent } from '../pages/show-article/show-article';
+=======
+
+
+>>>>>>> b25e14ce9a9ec497243467106730eb3d4c13e5d0
 
 
 @NgModule({
   declarations: [
     MyApp,
     HomePage,
-    FavoritesPage,
+   FavoritesPage,
     PlaylistPage,
     HistoryPage,
     AboutPage,
+
     ContactPage,
-    CallbackPage
+<<<<<<< HEAD
+    ArticleComponent,
+    ShowArticleComponent
+    // CallbackPage
+=======
+    ArticleComponent
+   
+>>>>>>> b25e14ce9a9ec497243467106730eb3d4c13e5d0
     
   ],
   imports: [
     BrowserModule,
-    IonicModule.forRoot(MyApp),
+
+    IonicModule.forRoot(MyApp, {
+     locationStrategy: 'path'
+  }, deepLinkConfig),
     FormsModule,
     ReactiveFormsModule,
+
     
   ],
   bootstrap: [IonicApp],
   entryComponents: [
     MyApp,
     HomePage,
-    FavoritesPage,
+   FavoritesPage,
     PlaylistPage,
     HistoryPage,
     AboutPage,
+
     ContactPage,
-    CallbackPage
+    ArticleComponent,
+    ArticleComponent
+  
   ],
   providers: [
     StatusBar,
     SplashScreen,
     {provide: ErrorHandler, useClass: IonicErrorHandler},
-    { provide: LocationStrategy, useClass: PathLocationStrategy }
+   { provide: LocationStrategy, useClass: PathLocationStrategy },
+    {provide: APP_BASE_HREF, useValue : '/' }
+    
   ]
 })
 export class AppModule {}
