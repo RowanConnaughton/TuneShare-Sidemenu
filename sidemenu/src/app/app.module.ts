@@ -18,7 +18,7 @@ import { SplashScreen } from '@ionic-native/splash-screen';
 import { ArticleComponent } from '../pages/article/article.component';
 // import { show-article} from '../pages/show-article/show-article';
 import { CallbackPage } from '../pages/callback/callback';
-
+import { ShowArticleComponent } from '../pages/show-article/show-article';
 
 
 @NgModule({
@@ -30,7 +30,8 @@ import { CallbackPage } from '../pages/callback/callback';
     HistoryPage,
     AboutPage,
     ContactPage,
-    ArticleComponent
+    ArticleComponent,
+    ShowArticleComponent
     // CallbackPage
     
   ],
@@ -50,6 +51,7 @@ import { CallbackPage } from '../pages/callback/callback';
     HistoryPage,
     AboutPage,
     ContactPage,
+    ArticleComponent,
     ArticleComponent
     // CallbackPage
   ],

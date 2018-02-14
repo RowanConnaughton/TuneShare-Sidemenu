@@ -1,9 +1,9 @@
-import { Component, OnInit, Input, ViewChild } from '@angular/core';
+import { Component, Input, ViewChild } from '@angular/core';
 import {Article} from './article.model';
-import { Platform, Nav } from 'ionic-angular';
+import { Nav } from 'ionic-angular';
 import { HomePage } from '../home/home';
-import { StatusBar } from '@ionic-native/status-bar';
-import { SplashScreen } from '@ionic-native/splash-screen';
+// import { StatusBar } from '@ionic-native/status-bar';
+// import { SplashScreen } from '@ionic-native/splash-screen';
 
 
 
@@ -17,17 +17,16 @@ import { SplashScreen } from '@ionic-native/splash-screen';
  
 })
 
-export class ArticleComponent implements OnInit {
+export class ArticleComponent {
   @Input()article:Article;
   @ViewChild(Nav) navCtrl: Nav;
   rootPage:any = HomePage;
   articles:Article[];
-
-  constructor(platform: Platform, statusBar: StatusBar, splashScreen: SplashScreen) {
-    // this.articles = [
-    //   new Article('Hello World', 'http://angular.io',5),
-    //   new Article('Angular 2', 'http://angular.io',3)
-    // ]
+//platform: Platform, statusBar: StatusBar, splashScreen: SplashScreen
+  constructor() {
+    this.articles = [
+      new Article('Hello World', 'http://angular.io', 5)
+    ]
     // platform.ready().then(() => {
     
     //   // Okay, so the platform is ready and our plugins are available.
@@ -62,7 +61,5 @@ export class ArticleComponent implements OnInit {
 
   }
 
-  ngOnInit() {
-  }
-
+ 
 }
