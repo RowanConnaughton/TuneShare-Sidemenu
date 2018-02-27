@@ -7,7 +7,7 @@ import { NavController } from 'ionic-angular';
   templateUrl: 'history.html'
 })
 export class HistoryPage {
-  items;
+  items: string[];
 
   constructor(public navCtrl: NavController) {
     this.initializeItems();
@@ -54,7 +54,7 @@ export class HistoryPage {
       'Young Thug'
     ];
   }
-  getItems(ev) {
+  getItems(ev: { target: { value: any; }; }) {
     // Reset items back to all of the items
     this.initializeItems();
 

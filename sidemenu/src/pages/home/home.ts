@@ -16,7 +16,7 @@ export class HomePage implements DoCheck{
   //   do ajax success 
   
      
-  function url_query( query ) {
+  function url_query( query: string ) {
     query = query.replace(/[\[]/,"\\\[").replace(/[\]]/,"\\\]");
     var expr = "[\\?&]"+query+"=([^&#]*)";
     var regex = new RegExp( expr );

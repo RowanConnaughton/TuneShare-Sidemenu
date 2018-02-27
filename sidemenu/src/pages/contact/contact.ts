@@ -51,7 +51,7 @@ export class ContactPage implements OnInit {
         }
       }
     
-      addPost(post) {
+      addPost(post: any) {
         this.rForm.controls.firstName =post.firstName;
         this.rForm.controls.lastName = post.lastName;
         this.rForm.controls.email = post.email;

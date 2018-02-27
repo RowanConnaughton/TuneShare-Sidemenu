@@ -10,7 +10,7 @@ import { HomePage } from '../home/home';
 @Component({
   selector: 'app-article',
   templateUrl: './article.component.html',
-  // styleUrls:['./style.css'],
+  // styleUrls:['./semantic.min.css'],
   host:{
     class: 'row'
   }

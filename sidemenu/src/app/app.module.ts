@@ -15,6 +15,8 @@ import {LocationStrategy, PathLocationStrategy, APP_BASE_HREF } from '@angular/c
 import { StatusBar } from '@ionic-native/status-bar';
 import { SplashScreen } from '@ionic-native/splash-screen';
 
+import { ArticleComponent } from '../pages/article/article.component';
+import { ShowArticleComponent } from '../pages/show-article/show-article';
 
 
 
@@ -26,20 +28,13 @@ export const deepLinkConfig: DeepLinkConfig = {
     {component: PlaylistPage, name: 'PlaylistPage', segment: 'playlist'},
     {component: HistoryPage, name: 'HistoryPage', segment: 'history'},
     {component: ContactPage, name: 'ContactPage', segment: 'contact'},
-   {component: ArticleComponent, name: 'ArticalPage', segment: 'artical'}
+   {component: ArticleComponent, name: 'ArticlePage', segment: 'article'}
   ]
 };
 
 
-import { ArticleComponent } from '../pages/article/article.component';
-// import { show-article} from '../pages/show-article/show-article';
-<<<<<<< HEAD
-import { CallbackPage } from '../pages/callback/callback';
-import { ShowArticleComponent } from '../pages/show-article/show-article';
-=======
 
 
->>>>>>> b25e14ce9a9ec497243467106730eb3d4c13e5d0
 
 
 @NgModule({
@@ -52,14 +47,11 @@ import { ShowArticleComponent } from '../pages/show-article/show-article';
     AboutPage,
 
     ContactPage,
-<<<<<<< HEAD
     ArticleComponent,
-    ShowArticleComponent
+    ShowArticleComponent,
     // CallbackPage
-=======
     ArticleComponent
    
->>>>>>> b25e14ce9a9ec497243467106730eb3d4c13e5d0
     
   ],
   imports: [
