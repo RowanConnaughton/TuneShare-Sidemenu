@@ -10,47 +10,29 @@ import * as $ from 'jquery';
 export class HomePage implements DoCheck{
 
   ngDoCheck(){
-    // window.alert("ngAfterViewInIt code works!");
+   
 
-    // do ajax
-  //   do ajax success 
   
-     
-  function url_query( query: string ) {
-    query = query.replace(/[\[]/,"\\\[").replace(/[\]]/,"\\\]");
-    var expr = "[\\?&]"+query+"=([^&#]*)";
-    var regex = new RegExp( expr );
-    var results = regex.exec( window.location.href );
-    if ( results !== null ) {
-        return results[1];
-    } else {
-        return false;
-    }
-}
 
-
-var code = url_query('code');
-if( code ) {
-     alert(code); // "yes"
- 
+if( window.location.hash ) {
+     var access_token = window.location.hash.split("=")[1].split("&")[0];
       $.ajax(
       {
-      method:"POST",
-      url: "http://accounts.spotify.com/api/token",
-      data:{
-        "grant_type": "authorization_code",
-        "code":         code,//given in url after login and redirect
-        "redirect_uri": "http://localhost:8100",
-        "client_secret":'2e07d8bab06c4da9beba81a7f5addfe6',
-        "client_id":    '64f2608e81b54dd6b67e8340e8b548b9',
-      },
-      success: function(result){
-        //handle
-        alert(result);
-      },
-    }
-  );
-}
+        method:"GET",
+        url: "https://api.spotify.com/v1/search?q=roadhouse%20blues&type=track",
+        headers: {  
+           'Authorization': 'Bearer '+ access_token
+        },
+        success: function(result){
+          //handle
+          alert(JSON.stringify(result));
+        },
+        error: function(result){
+          alert("spotify fail");
+          alert(JSON.stringify(result));
+        }
+      });
+  }
 }
 constructor(public navCtrl: NavController) {
 
