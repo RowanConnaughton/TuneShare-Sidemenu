@@ -3,15 +3,15 @@ import { Platform, Nav } from 'ionic-angular';
 import { StatusBar } from '@ionic-native/status-bar';
 import { SplashScreen } from '@ionic-native/splash-screen';
 import {HomePage} from '../pages/home/home';
-import { FavoritesPage } from '../pages/favorites/favorites';
-import { PlaylistPage } from '../pages/playlist/playlist';
-import { HistoryPage } from '../pages/history/history';
-import { AboutPage } from '../pages/about/about';
-import { ContactPage } from '../pages/contact/contact';
+// import { FavoritesPage } from '../pages/favorites/favorites';
+// import { PlaylistPage } from '../pages/playlist/playlist';
+// import { HistoryPage } from '../pages/history/history';
+// import { AboutPage } from '../pages/about/about';
+// import { ContactPage } from '../pages/contact/contact';
 
 
 
-import { ArticleComponent } from '../pages/article/article.component';
+// import { ArticleComponent } from '../pages/article/article.component';
 // import { Article } from '../pages/article/article.model';
 
 
