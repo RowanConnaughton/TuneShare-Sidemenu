@@ -22,7 +22,7 @@ import { ShowArticleComponent } from '../pages/show-article/show-article';
 
 export const deepLinkConfig: DeepLinkConfig = {
   links: [
-    {component: HomePage, name: 'HomePage', segment: 'home' },
+     {component: HomePage, name: 'HomePage' , segment: 'home'  },
     {component: AboutPage, name: 'AboutPage', segment: 'about' },
     {component: FavoritesPage, name: 'FavoritesPage', segment: 'favorites'},
     {component: PlaylistPage, name: 'PlaylistPage', segment: 'playlist'},

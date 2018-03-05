@@ -11,10 +11,9 @@ export class HomePage implements DoCheck{
 
   ngDoCheck(){
     
+    
      
-     
-    // userProfileTemplate = Handlebars.compile(userProfileSource),
-    // userProfilePlaceholder = document.getElementById('user-profile');
+
    
 
 if( window.location.hash ) {
@@ -32,14 +31,15 @@ if( window.location.hash ) {
         },
         success: function(result){
           //handle
-          alert(JSON.stringify(result));
-          // var MyJSON = JSON.stringify(result);
-          //document.getElementById('h3').innerHTML = "Logged in as " + result.display_name;
-          //$('#user-profile').show();
+         
+        $("#logIn").hide();
+        $('#card').show();
+
           $("#name").html("Name: "+result.display_name);
           $("#id").html("ID: "+result.id);
           $("#email").html("Email: "+result.email);
           $("#country").html("Country: "+result.country);
+          $("#img").attr("src", result.images[0].url);
         },
         error: function(result){
           alert("spotify fail");
