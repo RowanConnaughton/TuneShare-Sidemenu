@@ -4,7 +4,7 @@
       <ion-icon name="menu"></ion-icon>
     </button>
     <ion-title>
-      History
+      Search Tunes
     </ion-title>
   </ion-navbar>
 </ion-header>
@@ -12,17 +12,37 @@
 
 <!-- searchbar for played artists -->
 <ion-content>
-  <ion-searchbar (ionInput)="getItems($event)"></ion-searchbar>
+    <div class="container">
+        <div class="row">
+              <div class="col-sm-6 col-sm-offset-3">
+                  <div id="imaginary_container"> 
+                      <div class="input-group stylish-input-group">
+                          <input type="text" [(ngModel)] = "song" class="form-control" id="searchSongs"  placeholder="Search Songs" >
+                          <span class="input-group-addon">
+                              <button (click)="mySearch();" type="submit">
+                                  <span class="glyphicon glyphicon-search"></span>
+                              </button>  
+                          </span>
+                      </div>
+                  </div>
+              </div>
+        </div>
+      </div>
+
+      <div id="tracks">
+      <iframe src="https://open.spotify.com/embed?uri=spotify:track:6QgjcU0zLnzq5OrUoSZ3OK" width="300" height="380" frameborder="0" allowtransparency="true" allow="encrypted-media"></iframe>
+    </div>
+  <!-- <ion-searchbar (ionInput)="getItems($event)"></ion-searchbar>
   <ion-list>
     <ion-item *ngFor="let item of items">
       {{ item }}
     </ion-item>
-  </ion-list>
+  </ion-list> -->
 </ion-content> 
 
 <!-- footer test -->
 <ion-footer>
   <ion-toolbar>
-    <ion-title>Find Recently Played Artists...</ion-title>
+    <ion-title>Find your favourite Songs</ion-title>
   </ion-toolbar>
 </ion-footer>
