@@ -40,6 +40,8 @@ if( window.location.hash ) {
           $("#email").html("Email: "+result.email);
           $("#country").html("Country: "+result.country);
           $("#img").attr("src", result.images[0].url);
+          var ID = result.id;
+          sessionStorage.setItem('user_id', ID);
         },
         error: function(result){
           alert("spotify fail");
@@ -47,6 +49,7 @@ if( window.location.hash ) {
           $('#user-profile').hide();
         }
     });
+   
   }
   // Save data to sessionStorage
 
