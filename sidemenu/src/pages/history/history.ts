@@ -7,43 +7,38 @@ import * as $ from 'jquery';
   templateUrl: 'history.html'
 })
 export class HistoryPage {
-  song:string;
+  song: string;
   constructor(public navCtrl: NavController) {
   }
-  mySearch(){
-    console.log( "TextAreaComponent::song: " + this.song);
-  var access_token = sessionStorage.getItem('access_token');
-   var song = this.song;
+  mySearch() {
+    // console.log( "Test::song: " + this.song);
+    var access_token = sessionStorage.getItem('access_token');
+    var song = this.song;
 
-  $.ajax(
-  {
-    method:"GET",
-    url: "https://api.spotify.com/v1/search?q="+song+"&type=track",
-    headers: {  
-       'Authorization': 'Bearer '+ access_token
-    },
-    success: function(result){
-      //handle
-    alert(JSON.stringify(result));
-    // $("#logIn").hide();
-    // $('#card').show();
+    $.ajax(
+      {
+        method: "GET",
+        url: "https://api.spotify.com/v1/search?q=" + song + "&type=track",
+        headers: {
+          'Authorization': 'Bearer ' + access_token
+        },
+        success: function (result) {
+          //handle
+          //alert(JSON.stringify(result));
+          var uri = result.tracks.items[0].uri;
+          // console.log(result.tracks.items[0].uri);
+          $("iframe").attr("src", "https://open.spotify.com/embed?uri=" + uri);
+        },
+        error: function (result) {
+          alert("spotify fail");
+          alert(JSON.stringify(result));
 
-    //   $("#name").html("Name: "+result.display_name);
-    //   $("#id").html("ID: "+result.id);
-    //   $("#email").html("Email: "+result.email);
-    //   $("#country").html("Country: "+result.country);
-    //   $("#img").attr("src", result.images[0].url);
-    },
-    error: function(result){
-      alert("spotify fail");
-      alert(JSON.stringify(result));
-     
-    }
-});
+        }
+      });
   }
 
- 
-  
+
+
   // initializeItems() {
   //   this.items = [
   //     'Arcade Fire',

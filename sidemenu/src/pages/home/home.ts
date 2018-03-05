@@ -31,7 +31,7 @@ if( window.location.hash ) {
         },
         success: function(result){
           //handle
-         
+          // alert(JSON.stringify(result));
         $("#logIn").hide();
         $('#card').show();
 
