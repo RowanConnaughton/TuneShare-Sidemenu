@@ -1,4 +1,4 @@
-import { Component, Output } from '@angular/core';
+import { Component } from '@angular/core';
 import { NavController } from 'ionic-angular';
 import * as $ from 'jquery';
 
@@ -12,14 +12,7 @@ export class HistoryPage {
   }
 
   
-  x: any;
-
-fav() {
-  let x = document.getElementById("track1");
   
-   
-    
-} 
 
   mySearch() {
     // console.log( "Test::song: " + this.song);
