@@ -18,6 +18,34 @@ export class HistoryPage {
    
     document.getElementById("test").appendChild(x);
 } */
+  addTrack(){
+    var access_token = sessionStorage.getItem('access_token');
+    var playlistId = sessionStorage.getItem('playlistId');
+    var user_id = sessionStorage.getItem('user_id');
+    var trackUri = sessionStorage.getItem('track1');
+    console.log(playlistId);
+    console.log(user_id);
+    console.log(trackUri);
+    $.ajax(
+      {
+        method: "POST",
+        url: "https://api.spotify.com/v1/users/"+user_id+"/playlists/"+playlistId+"/tracks?uris="+trackUri,
+        headers: {
+          'Authorization': 'Bearer ' + access_token
+        },
+        contentType: 'application/json',
+        success: function (result) {
+          //handle
+          alert(JSON.stringify(result));
+          
+        },
+        error: function (result) {
+          alert("spotify fail");
+          alert(JSON.stringify(result));
+
+        }
+      });
+    }
 
   mySearch() {
     // console.log( "Test::song: " + this.song);
@@ -35,9 +63,14 @@ export class HistoryPage {
           //handle
           //alert(JSON.stringify(result));
           var uri1 = result.tracks.items[0].uri;
+          sessionStorage.setItem('track1', uri1);
           var uri2 = result.tracks.items[1].uri;
+          sessionStorage.setItem('track2', uri2);
           var uri3 = result.tracks.items[2].uri;
+          sessionStorage.setItem('track3', uri3);
           var uri4 = result.tracks.items[3].uri;
+          sessionStorage.setItem('track4', uri4);
+
           // console.log(result.tracks.items[0].uri);
           $("#track1").attr("src", "https://open.spotify.com/embed?uri=" + uri1);
           $("#track2").attr("src", "https://open.spotify.com/embed?uri=" + uri2);

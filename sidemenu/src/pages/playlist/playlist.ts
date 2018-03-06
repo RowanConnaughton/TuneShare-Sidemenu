@@ -66,8 +66,8 @@ export class PlaylistPage implements OnInit{
         success: function (result) {
           //handle
          // alert("playlist created");
-         // alert(JSON.stringify(result));
-         // console.log(result.uri);
+         //alert(JSON.stringify(result));
+         sessionStorage.setItem('playlistId', result.id);
           var uriNew = result.uri;
            $("#playlistFrames").append("<iframe id='p4' src='https://open.spotify.com/embed?uri="+uriNew+"' width='300' height='380' frameborder='0' allowtransparency='true'></iframe>");
           // console.log(result.tracks.items[0].uri);
