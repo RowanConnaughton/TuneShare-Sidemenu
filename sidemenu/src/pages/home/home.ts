@@ -1,6 +1,7 @@
 import { Component, DoCheck } from '@angular/core';
 import { NavController } from 'ionic-angular';
 import * as $ from 'jquery';
+//import { InAppBrowser } from '@ionic-native/in-app-browser';
 
 
 @Component({
