@@ -16,9 +16,9 @@ export class PlaylistPage{
   Create() {
     
     var access_token = sessionStorage.getItem('access_token');
-    var Name = this.playlistName;
+    var name = this.playlistName;
     var user_id = sessionStorage.getItem('user_id');
-  
+ 
     $.ajax(
       {
         method: "POST",
@@ -27,13 +27,13 @@ export class PlaylistPage{
           'Authorization': 'Bearer ' + access_token
         },
         contentType: 'application/json',
-        data:{
-          "name": Name,
-        },
+        data:JSON.stringify({
+          "name": name
+        }),
         success: function (result) {
           //handle
           alert(JSON.stringify(result));
-         
+        
           // console.log(result.tracks.items[0].uri);
         },
         error: function (result) {

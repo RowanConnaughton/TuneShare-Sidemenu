@@ -12,6 +12,10 @@
 
 <!-- searchbar for played artists -->
 <ion-content>
+<script src="https://sdk.scdn.co/spotify-player.js"></script>
+
+
+
     <div class="container">
         <div class="row">
               <div class="col-sm-6 col-sm-offset-3">
@@ -28,7 +32,11 @@
               </div>
         </div>
       </div>
-
+      <script>
+      window.onSpotifyWebPlaybackSDKReady = () => {
+        // You can now initialize Spotify.Player and use the SDK
+      };
+      </script>
       <div class="track1">
       <iframe id="track1" src="https://open.spotify.com/embed?uri=spotify:track:6QgjcU0zLnzq5OrUoSZ3OK" width="300" height="380" frameborder="0" allowtransparency="true" allow="encrypted-media"></iframe>
     </div>
