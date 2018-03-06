@@ -1,4 +1,4 @@
-import { Component } from '@angular/core';
+import { Component, Output } from '@angular/core';
 import { NavController } from 'ionic-angular';
 import * as $ from 'jquery';
 
@@ -11,13 +11,15 @@ export class HistoryPage {
   constructor(public navCtrl: NavController) {
   }
 
+  
+  x: any;
 
-/* fav(){
-  var x = document.getElementById("myFrame");
+fav() {
+  let x = document.getElementById("track1");
   
    
-    document.getElementById("test").appendChild(x);
-} */
+    
+} 
 
   mySearch() {
     // console.log( "Test::song: " + this.song);

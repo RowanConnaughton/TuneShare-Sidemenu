@@ -17,7 +17,7 @@
               <div class="col-sm-6 col-sm-offset-3">
                   <div id="imaginary_container"> 
                       <div class="input-group stylish-input-group">
-                          <input type="text" [(ngModel)] = "song" class="form-control" id="searchSongs"  placeholder="Search Songs or Artists" >
+                          <input type="text" [(ngModel)] = "song" class="form-control" id="searchSongs" (keyup.enter)="mySearch();"  placeholder="Search Songs or Artists" >
                           <span class="input-group-addon">
                               <button (click)="mySearch();" type="submit">
                                   <span class="glyphicon glyphicon-search"></span>
@@ -30,21 +30,25 @@
       </div>
 
 
-      <div class="track1">
+      <div class="track">
       <iframe id="track1" src="https://open.spotify.com/embed?uri=spotify:track:6QgjcU0zLnzq5OrUoSZ3OK" width="300" height="380" frameborder="0" allowtransparency="true" allow="encrypted-media"></iframe>
+    
+      
     </div>
-    <div class="track2">
+    <div class="track">
       <iframe id="track2" src="https://open.spotify.com/embed?uri=spotify:track:6QgjcU0zLnzq5OrUoSZ3OK" width="300" height="380" frameborder="0" allowtransparency="true" allow="encrypted-media"></iframe>
+      
     </div>
-    <div class="track3">
+    <div class="track">
       <iframe id="track3" src="https://open.spotify.com/embed?uri=spotify:track:6QgjcU0zLnzq5OrUoSZ3OK" width="300" height="380" frameborder="0" allowtransparency="true" allow="encrypted-media"></iframe>
+      
     </div>
-    <div class="track4">
+    <div class="track">
       <iframe id="track4" src="https://open.spotify.com/embed?uri=spotify:track:6QgjcU0zLnzq5OrUoSZ3OK" width="300" height="380" frameborder="0" allowtransparency="true" allow="encrypted-media"></iframe>
-
+      
     </div>
 
-    <div id="test"></div>
+    
   <!-- <ion-searchbar (ionInput)="getItems($event)"></ion-searchbar>
   <ion-list>
     <ion-item *ngFor="let item of items">

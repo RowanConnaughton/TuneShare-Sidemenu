@@ -1,4 +1,4 @@
-import { Component } from '@angular/core';
+import { Component, Input } from '@angular/core';
 import { /*IonicPage,*/ NavController } from 'ionic-angular';
 
 
@@ -12,6 +12,8 @@ import { /*IonicPage,*/ NavController } from 'ionic-angular';
   templateUrl: 'favorites.html'
 })
 export class FavoritesPage {
+
+
 
   constructor(public navCtrl: NavController) {
   }
