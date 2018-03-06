@@ -31,7 +31,12 @@
 
       <div id="tracks">
       <iframe src="https://open.spotify.com/embed?uri=spotify:track:6QgjcU0zLnzq5OrUoSZ3OK" width="300" height="380" frameborder="0" allowtransparency="true" allow="encrypted-media"></iframe>
+      <button (click)="fav();" type="submit">
+          <span class="glyphicon glyphicon-heart"></span>
+        </button> 
     </div>
+
+    <div id="test"></div>
   <!-- <ion-searchbar (ionInput)="getItems($event)"></ion-searchbar>
   <ion-list>
     <ion-item *ngFor="let item of items">

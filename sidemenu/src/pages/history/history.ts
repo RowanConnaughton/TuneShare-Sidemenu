@@ -10,6 +10,15 @@ export class HistoryPage {
   song: string;
   constructor(public navCtrl: NavController) {
   }
+
+
+/* fav(){
+  var x = document.getElementById("myFrame");
+  
+   
+    document.getElementById("test").appendChild(x);
+} */
+
   mySearch() {
     // console.log( "Test::song: " + this.song);
     var access_token = sessionStorage.getItem('access_token');
