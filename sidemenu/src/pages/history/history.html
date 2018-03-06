@@ -17,7 +17,7 @@
               <div class="col-sm-6 col-sm-offset-3">
                   <div id="imaginary_container"> 
                       <div class="input-group stylish-input-group">
-                          <input type="text" [(ngModel)] = "song" class="form-control" id="searchSongs"  placeholder="Search Songs" >
+                          <input type="text" [(ngModel)] = "song" class="form-control" id="searchSongs"  placeholder="Search Songs or Artists" >
                           <span class="input-group-addon">
                               <button (click)="mySearch();" type="submit">
                                   <span class="glyphicon glyphicon-search"></span>
@@ -29,11 +29,19 @@
         </div>
       </div>
 
-      <div id="tracks">
-      <iframe src="https://open.spotify.com/embed?uri=spotify:track:6QgjcU0zLnzq5OrUoSZ3OK" width="300" height="380" frameborder="0" allowtransparency="true" allow="encrypted-media"></iframe>
-      <button (click)="fav();" type="submit">
-          <span class="glyphicon glyphicon-heart"></span>
-        </button> 
+
+      <div class="track1">
+      <iframe id="track1" src="https://open.spotify.com/embed?uri=spotify:track:6QgjcU0zLnzq5OrUoSZ3OK" width="300" height="380" frameborder="0" allowtransparency="true" allow="encrypted-media"></iframe>
+    </div>
+    <div class="track2">
+      <iframe id="track2" src="https://open.spotify.com/embed?uri=spotify:track:6QgjcU0zLnzq5OrUoSZ3OK" width="300" height="380" frameborder="0" allowtransparency="true" allow="encrypted-media"></iframe>
+    </div>
+    <div class="track3">
+      <iframe id="track3" src="https://open.spotify.com/embed?uri=spotify:track:6QgjcU0zLnzq5OrUoSZ3OK" width="300" height="380" frameborder="0" allowtransparency="true" allow="encrypted-media"></iframe>
+    </div>
+    <div class="track4">
+      <iframe id="track4" src="https://open.spotify.com/embed?uri=spotify:track:6QgjcU0zLnzq5OrUoSZ3OK" width="300" height="380" frameborder="0" allowtransparency="true" allow="encrypted-media"></iframe>
+
     </div>
 
     <div id="test"></div>
@@ -48,6 +56,6 @@
 <!-- footer test -->
 <ion-footer>
   <ion-toolbar>
-    <ion-title>Find your favourite Songs</ion-title>
+    <ion-title>Find your favourite Songs or Artists</ion-title>
   </ion-toolbar>
 </ion-footer>

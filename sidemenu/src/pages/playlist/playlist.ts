@@ -1,31 +1,34 @@
 import { Component } from '@angular/core';
 import { NavController } from 'ionic-angular';
+import * as $ from 'jquery';
 
 @Component({
   selector: 'page-playlist',
   templateUrl: 'playlist.html'
 })
-export class PlaylistPage {
+export class PlaylistPage{
   playlistName: string;
 
   constructor(public navCtrl: NavController) {
   }
+
+  
   Create() {
     
     var access_token = sessionStorage.getItem('access_token');
-    var PlaylistName = this.playlistName;
+    var Name = this.playlistName;
     var user_id = sessionStorage.getItem('user_id');
-
+  
     $.ajax(
       {
         method: "POST",
         url: "https://api.spotify.com/v1/users/"+user_id+"/playlists",
         headers: {
-          'Authorization': 'Bearer ' + access_token,
-          'Content-Type' : 'application/json'
+          'Authorization': 'Bearer ' + access_token
         },
+        contentType: 'application/json',
         data:{
-          name: PlaylistName
+          "name": Name,
         },
         success: function (result) {
           //handle
@@ -40,4 +43,5 @@ export class PlaylistPage {
         }
       });
   }
+
 }

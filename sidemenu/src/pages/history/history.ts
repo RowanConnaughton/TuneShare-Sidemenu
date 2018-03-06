@@ -34,9 +34,15 @@ export class HistoryPage {
         success: function (result) {
           //handle
           //alert(JSON.stringify(result));
-          var uri = result.tracks.items[0].uri;
+          var uri1 = result.tracks.items[0].uri;
+          var uri2 = result.tracks.items[1].uri;
+          var uri3 = result.tracks.items[2].uri;
+          var uri4 = result.tracks.items[3].uri;
           // console.log(result.tracks.items[0].uri);
-          $("iframe").attr("src", "https://open.spotify.com/embed?uri=" + uri);
+          $("#track1").attr("src", "https://open.spotify.com/embed?uri=" + uri1);
+          $("#track2").attr("src", "https://open.spotify.com/embed?uri=" + uri2);
+          $("#track3").attr("src", "https://open.spotify.com/embed?uri=" + uri3);
+          $("#track4").attr("src", "https://open.spotify.com/embed?uri=" + uri4);
         },
         error: function (result) {
           alert("spotify fail");
