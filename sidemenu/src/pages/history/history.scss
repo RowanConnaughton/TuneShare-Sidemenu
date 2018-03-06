@@ -2,23 +2,24 @@
 .container{
     margin-left: 10%
 }
-.track1{
-    //margin-left: 10%;
-    float:left;
-    
+
+
+
+.track{
+    text-align: center;
 }
 
-.track2{
-    //margin-left: 30%;
-    float:left;
-}
 
-.track2{
-    //margin-left: 60%;
-    float:left;
-}
+    .fav{
+        float: right;
+    }
 
-.track4{
-    //margin-left: 60%;
-    float:left;
-}
+@media screen and (min-width: 600px){
+
+    .track{
+        // padding: 10%;
+        padding:2px;
+        float: left;
+     }
+
+ }

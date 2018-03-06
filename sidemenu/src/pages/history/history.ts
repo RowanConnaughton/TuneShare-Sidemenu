@@ -11,21 +11,14 @@ export class HistoryPage {
   constructor(public navCtrl: NavController) {
   }
 
-
-/* fav(){
-  var x = document.getElementById("myFrame");
-  
    
-    document.getElementById("test").appendChild(x);
-} */
+    
+
   addTrack(){
     var access_token = sessionStorage.getItem('access_token');
     var playlistId = sessionStorage.getItem('playlistId');
     var user_id = sessionStorage.getItem('user_id');
     var trackUri = sessionStorage.getItem('track1');
-    console.log(playlistId);
-    console.log(user_id);
-    console.log(trackUri);
     $.ajax(
       {
         method: "POST",
@@ -46,6 +39,7 @@ export class HistoryPage {
         }
       });
     }
+  
 
   mySearch() {
     // console.log( "Test::song: " + this.song);
