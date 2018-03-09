@@ -85,7 +85,7 @@ export class FavoritesPage {
 
         },
         error: function (result) {
-          alert("spotify fail");
+          alert("Please login on Homepage");
           alert(JSON.stringify(result));
 
         }

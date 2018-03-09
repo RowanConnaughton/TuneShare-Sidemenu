@@ -20,7 +20,7 @@ export class PlaylistPage implements OnInit{
         },
         success: function (result) {
           //handle
-          alert("Here are some Featured playlists, Please Create a new one :)");
+          alert("Please Create a new playlist");
           var uri1 = result.playlists.items[0].uri;
           var uri2 = result.playlists.items[1].uri;
           var uri3 = result.playlists.items[2].uri;
@@ -63,7 +63,7 @@ export class PlaylistPage implements OnInit{
         }),
         success: function (result) {
           //handle
-         alert("Playlist Created, head over to the favourites page to view it or to the search page to add songs");
+         alert("Playlist Created, head over to the search page to add songs");
          //alert(JSON.stringify(result));
          sessionStorage.setItem('playlistId', result.id);
           var uriNew = result.uri;

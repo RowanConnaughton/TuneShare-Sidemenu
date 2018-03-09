@@ -29,7 +29,7 @@ export class HistoryPage {
         contentType: 'application/json',
         success: function (result) {
           //handle
-          alert("Song added to your new playlist!");
+          alert("Song added, go to favourites to view your playlist");
           
         },
         error: function (result) {
@@ -56,7 +56,7 @@ export class HistoryPage {
           contentType: 'application/json',
           success: function (result) {
             //handle
-            alert("Song added to your new playlist!");
+            alert("Song added, go to favourites to view your playlist");
             
           },
           error: function (result) {
@@ -83,7 +83,7 @@ export class HistoryPage {
             contentType: 'application/json',
             success: function (result) {
               //handle
-              alert("Song added to your new playlist!");
+              alert("Song added, go to favourites to view your playlist");
               
             },
             error: function (result) {
@@ -110,7 +110,7 @@ export class HistoryPage {
               contentType: 'application/json',
               success: function (result) {
                 //handle
-                alert("Song added to your new playlist!");
+                alert("Song added, go to favourites to view your playlist");
                 
               },
               error: function (result) {
