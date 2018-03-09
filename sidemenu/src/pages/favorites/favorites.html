@@ -20,14 +20,20 @@
         <iframe id="p1" src="https://open.spotify.com/embed/artist/6eUKZXaKkcviH0Ku9w2n3V"
         width="300" height="380" frameborder="0" allowtransparency="true"></iframe>
       </li>
-      <li>
+    
+      <!-- <li>
         <iframe id="p2" src="https://open.spotify.com/embed/artist/3Mcii5XWf6E0lrY3Uky4cA"
         width="300" height="380" frameborder="0" allowtransparency="true"></iframe></li>
       <li>
           <iframe id="p3" src="https://open.spotify.com/embed/user/1128575828/playlist/4WY8AzXYb0CeCA7PeJnxak"
           width="300" height="380" frameborder="0" allowtransparency="true"></iframe>
-      </li>
+      </li> -->
     </ul>
+    <div class="input-group stylish-input-group">
+      <label>click here to</label>
+      <input type="number" [(ngModel)]="songNumber" class="form-control" id="voteUp" (keyup.enter)="voteUp();" placeholder="Song number on Playlist">
+      <button (click)="voteUp();" type="submit">Vote!</button>
+    </div>
 </ion-content>
 
 <ion-footer>

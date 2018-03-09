@@ -12,62 +12,70 @@
 
 <!-- searchbar for played artists -->
 <ion-content>
-<script src="https://sdk.scdn.co/spotify-player.js"></script>
+  <script src="https://sdk.scdn.co/spotify-player.js"></script>
 
 
 
-    <div class="container">
-        <div class="row">
-              <div class="col-sm-6 col-sm-offset-3">
-                  <div id="imaginary_container"> 
-                      <div class="input-group stylish-input-group">
-                          <input type="text" [(ngModel)] = "song" class="form-control" id="searchSongs" (keyup.enter)="mySearch();"  placeholder="Search Songs or Artists" >
-                          <span class="input-group-addon">
-                              <button (click)="mySearch();" type="submit">
-                                  <span class="glyphicon glyphicon-search"></span>
-                              </button>  
-                          </span>
-                      </div>
-                  </div>
-              </div>
+  <div class="container">
+    <div class="row">
+      <div class="col-sm-6 col-sm-offset-3">
+        <div id="imaginary_container">
+          <div class="input-group stylish-input-group">
+            <input type="text" [(ngModel)]="song" class="form-control" id="searchSongs" (keyup.enter)="mySearch();" placeholder="Search Songs or Artists">
+            <span class="input-group-addon">
+              <button (click)="mySearch();" type="submit">
+                <span class="glyphicon glyphicon-search"></span>
+              </button>
+            </span>
+          </div>
         </div>
       </div>
+    </div>
+  </div>
 
 
 
-      
 
-      <script>
+
+  <script>
       // window.onSpotifyWebPlaybackSDKReady = () => {
       //   // You can now initialize Spotify.Player and use the SDK
       // };
-      </script>
-      <div class="track">
-      <iframe id="track1" src="https://open.spotify.com/embed?uri=spotify:track:6QgjcU0zLnzq5OrUoSZ3OK" width="300" height="380" frameborder="0" allowtransparency="true" allow="encrypted-media"></iframe> 
-    </div>
-    <button (click)="addTrack();" type="submit">Add to Playlist</button> 
-    
-    <div class="track">
-      <iframe id="track2" src="https://open.spotify.com/embed?uri=spotify:track:6QgjcU0zLnzq5OrUoSZ3OK" width="300" height="380" frameborder="0" allowtransparency="true" allow="encrypted-media"></iframe>
-      
-    </div>
-    <div class="track">
-      <iframe id="track3" src="https://open.spotify.com/embed?uri=spotify:track:6QgjcU0zLnzq5OrUoSZ3OK" width="300" height="380" frameborder="0" allowtransparency="true" allow="encrypted-media"></iframe>
-      
-    </div>
-    <div class="track">
-      <iframe id="track4" src="https://open.spotify.com/embed?uri=spotify:track:6QgjcU0zLnzq5OrUoSZ3OK" width="300" height="380" frameborder="0" allowtransparency="true" allow="encrypted-media"></iframe>
-      
-    </div>
+  </script>
+  <div class="track">
+    <iframe id="track1" src="https://open.spotify.com/embed?uri=spotify:track:6QgjcU0zLnzq5OrUoSZ3OK" width="300" height="380"
+      frameborder="0" allowtransparency="true" allow="encrypted-media"></iframe>
+  </div>
 
-    
+  <div class="track">
+    <iframe id="track2" src="https://open.spotify.com/embed?uri=spotify:track:6QgjcU0zLnzq5OrUoSZ3OK" width="300" height="380"
+      frameborder="0" allowtransparency="true" allow="encrypted-media"></iframe>
+  </div>
+
+  <div class="track">
+    <iframe id="track3" src="https://open.spotify.com/embed?uri=spotify:track:6QgjcU0zLnzq5OrUoSZ3OK" width="300" height="380"
+      frameborder="0" allowtransparency="true" allow="encrypted-media"></iframe>
+  </div>
+
+  <div class="track">
+    <iframe id="track4" src="https://open.spotify.com/embed?uri=spotify:track:6QgjcU0zLnzq5OrUoSZ3OK" width="300" height="380"
+      frameborder="0" allowtransparency="true" allow="encrypted-media"></iframe>
+  </div>
+  
+  <div>
+    <button (click)="addTrack1();" type="submit">Add Song1</button>
+    <button (click)="addTrack2();" type="submit">Add Song2</button>
+    <button (click)="addTrack3();" type="submit">Add Song3</button>
+    <button (click)="addTrack4();" type="submit">Add Song4</button>
+  </div>
+
   <!-- <ion-searchbar (ionInput)="getItems($event)"></ion-searchbar>
   <ion-list>
     <ion-item *ngFor="let item of items">
       {{ item }}
     </ion-item>
   </ion-list> -->
-</ion-content> 
+</ion-content>
 
 <!-- footer test -->
 <ion-footer>

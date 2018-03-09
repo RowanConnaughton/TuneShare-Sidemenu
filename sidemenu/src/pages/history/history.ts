@@ -14,7 +14,7 @@ export class HistoryPage {
    
     
 
-  addTrack(){
+  addTrack1(){
     var access_token = sessionStorage.getItem('access_token');
     var playlistId = sessionStorage.getItem('playlistId');
     var user_id = sessionStorage.getItem('user_id');
@@ -29,7 +29,7 @@ export class HistoryPage {
         contentType: 'application/json',
         success: function (result) {
           //handle
-          alert(JSON.stringify(result));
+          alert("Song added to your new playlist!");
           
         },
         error: function (result) {
@@ -39,6 +39,87 @@ export class HistoryPage {
         }
       });
     }
+
+    addTrack2(){
+      var access_token = sessionStorage.getItem('access_token');
+      var playlistId = sessionStorage.getItem('playlistId');
+      var user_id = sessionStorage.getItem('user_id');
+      
+      var trackUri = sessionStorage.getItem('track2');
+      $.ajax(
+        {
+          method: "POST",
+          url: "https://api.spotify.com/v1/users/"+user_id+"/playlists/"+playlistId+"/tracks?uris="+trackUri,
+          headers: {
+            'Authorization': 'Bearer ' + access_token
+          },
+          contentType: 'application/json',
+          success: function (result) {
+            //handle
+            alert("Song added to your new playlist!");
+            
+          },
+          error: function (result) {
+            alert("spotify fail");
+            alert(JSON.stringify(result));
+  
+          }
+        });
+      }
+
+      addTrack3(){
+        var access_token = sessionStorage.getItem('access_token');
+        var playlistId = sessionStorage.getItem('playlistId');
+        var user_id = sessionStorage.getItem('user_id');
+        
+        var trackUri = sessionStorage.getItem('track3');
+        $.ajax(
+          {
+            method: "POST",
+            url: "https://api.spotify.com/v1/users/"+user_id+"/playlists/"+playlistId+"/tracks?uris="+trackUri,
+            headers: {
+              'Authorization': 'Bearer ' + access_token
+            },
+            contentType: 'application/json',
+            success: function (result) {
+              //handle
+              alert("Song added to your new playlist!");
+              
+            },
+            error: function (result) {
+              alert("spotify fail");
+              alert(JSON.stringify(result));
+    
+            }
+          });
+        }
+
+        addTrack4(){
+          var access_token = sessionStorage.getItem('access_token');
+          var playlistId = sessionStorage.getItem('playlistId');
+          var user_id = sessionStorage.getItem('user_id');
+          
+          var trackUri = sessionStorage.getItem('track4');
+          $.ajax(
+            {
+              method: "POST",
+              url: "https://api.spotify.com/v1/users/"+user_id+"/playlists/"+playlistId+"/tracks?uris="+trackUri,
+              headers: {
+                'Authorization': 'Bearer ' + access_token
+              },
+              contentType: 'application/json',
+              success: function (result) {
+                //handle
+                alert("Song added to your new playlist!");
+                
+              },
+              error: function (result) {
+                alert("Failed to add song");
+                alert(JSON.stringify(result));
+      
+              }
+            });
+          }
   
 
   mySearch() {
@@ -64,7 +145,7 @@ export class HistoryPage {
           sessionStorage.setItem('track3', uri3);
           var uri4 = result.tracks.items[3].uri;
           sessionStorage.setItem('track4', uri4);
-
+          console.log(result);
           // console.log(result.tracks.items[0].uri);
           $("#track1").attr("src", "https://open.spotify.com/embed?uri=" + uri1);
           $("#track2").attr("src", "https://open.spotify.com/embed?uri=" + uri2);
@@ -72,8 +153,8 @@ export class HistoryPage {
           $("#track4").attr("src", "https://open.spotify.com/embed?uri=" + uri4);
         },
         error: function (result) {
-          alert("spotify fail");
-          alert(JSON.stringify(result));
+          alert("Problem searching for Songs");
+          //alert(JSON.stringify(result));
 
         }
       });

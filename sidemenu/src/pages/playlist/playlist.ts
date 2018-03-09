@@ -14,15 +14,13 @@ export class PlaylistPage implements OnInit{
     $.ajax(
       {
         method: "GET",
-        // url: "https://api.spotify.com/v1/users/"+user_id+"/playlists",
-        // url: "https://api.spotify.com/v1/browse/featured-playlists",
         url:"https://api.spotify.com/v1/browse/featured-playlists",
         headers: {
           'Authorization': 'Bearer ' + access_token
         },
         success: function (result) {
           //handle
-          //alert(JSON.stringify(result));
+          alert("Here are some Featured playlists, Please Create a new one :)");
           var uri1 = result.playlists.items[0].uri;
           var uri2 = result.playlists.items[1].uri;
           var uri3 = result.playlists.items[2].uri;
@@ -65,7 +63,7 @@ export class PlaylistPage implements OnInit{
         }),
         success: function (result) {
           //handle
-         // alert("playlist created");
+         alert("Playlist Created, head over to the favourites page to view it or to the search page to add songs");
          //alert(JSON.stringify(result));
          sessionStorage.setItem('playlistId', result.id);
           var uriNew = result.uri;
@@ -73,7 +71,7 @@ export class PlaylistPage implements OnInit{
           // console.log(result.tracks.items[0].uri);
         },
         error: function (result) {
-          alert("spotify fail");
+          alert("Could not create Playlist");
           alert(JSON.stringify(result));
 
         }
