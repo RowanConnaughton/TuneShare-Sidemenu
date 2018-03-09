@@ -69,6 +69,7 @@ export class FavoritesPage {
 
           //handle
           //alert("Here are some your Playlists");
+          //alert(JSON.stringify(result));
           console.log(result);
 
 
@@ -76,6 +77,8 @@ export class FavoritesPage {
           var uri2 = result.items[1].uri;
           var uri3 = result.items[2].uri;
 
+          //set current playlistId
+          sessionStorage.setItem('CurrentPlaylistId', result.items[0].id);
 
           $("#p1").attr("src", "https://open.spotify.com/embed?uri=" + uri1);
           $("#p2").attr("src", "https://open.spotify.com/embed?uri=" + uri2);
@@ -87,6 +90,7 @@ export class FavoritesPage {
         error: function (result) {
           alert("Please login on Homepage");
           alert(JSON.stringify(result));
+          // sessionStorage.setItem('playlistId', result.items[0].id);
 
         }
       });

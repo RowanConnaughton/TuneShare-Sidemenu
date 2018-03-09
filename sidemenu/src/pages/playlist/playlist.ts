@@ -34,7 +34,7 @@ export class PlaylistPage implements OnInit{
           // console.log(result.tracks.items[0].uri);
         },
         error: function (result) {
-          alert("spotify fail");
+          alert("Please login on Homepage");
           alert(JSON.stringify(result));
 
         }
