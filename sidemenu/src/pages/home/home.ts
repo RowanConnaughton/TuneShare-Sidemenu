@@ -21,7 +21,7 @@ if( window.location.hash ) {
      var access_token = window.location.hash.split("=")[1].split("&")[0];
 
     // Save data to sessionStorage
-     sessionStorage.setItem('access_token', access_token);
+    sessionStorage.setItem('access_token', access_token);
 
       $.ajax(
       {
