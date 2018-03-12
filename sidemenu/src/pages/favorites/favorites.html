@@ -29,7 +29,7 @@
       <label>Enter Song to Vote up the Playlist</label>
       <input type="number" [(ngModel)]="songNumber" class="form-control" id="voteUp" (keyup.enter)="voteUp();" placeholder="Song number on Playlist">
       <div id="btnVote">
-        <button id="voteBtn" (click)="voteUp();" type="submit" class="btn btn btn-info btn-lg">Vote!</button>
+        <button id="voteBtn" ion-button (click)="voteUp();" type="submit" class="btn btn btn-info btn-lg">Vote!</button>
       </div>
     </div>
   </div>
