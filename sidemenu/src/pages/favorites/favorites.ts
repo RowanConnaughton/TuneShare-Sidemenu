@@ -51,14 +51,9 @@ export class FavoritesPage {
         }),
         success: function (result) {
           //handle
-<<<<<<< HEAD
          // alert("Song "+alertNumber+" Voted, please wait as we move it up the playlist");
          // alert(JSON.stringify(result));
          self.alertVote();
-=======
-          alert("Song " + alertNumber + " Voted, please wait as we move it up the playlist");
-          // alert(JSON.stringify(result));
->>>>>>> 79134dd7c386723d1d68158c2174da3b26d6bc70
           console.log(result);
         },
         error: function (result) {
@@ -71,10 +66,7 @@ export class FavoritesPage {
 
   ionViewWillEnter() {
     var access_token = sessionStorage.getItem('access_token');
-<<<<<<< HEAD
     var self = this;
-=======
->>>>>>> 79134dd7c386723d1d68158c2174da3b26d6bc70
 
     $.ajax(
       {
@@ -99,16 +91,10 @@ export class FavoritesPage {
           $("#p3").attr("src", "https://open.spotify.com/embed?uri=" + uri3);
         },
         error: function (result) {
-<<<<<<< HEAD
           //alert("Please login on Homepage");
          // alert(JSON.stringify(result));
           // sessionStorage.setItem('playlistId', result.items[0].id);
           self.alertlog();
-=======
-
-          alert(JSON.stringify(result));
-          // sessionStorage.setItem('playlistId', result.items[0].id);
->>>>>>> 79134dd7c386723d1d68158c2174da3b26d6bc70
         }
       });
   }

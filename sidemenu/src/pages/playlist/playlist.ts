@@ -9,18 +9,9 @@ import { AlertController } from 'ionic-angular';
 })
 export class PlaylistPage implements OnInit {
   playlistName: string;
-<<<<<<< HEAD
   
   ngOnInit(){
     var self = this;
-=======
-
-
-  constructor(public navCtrl: NavController) { }
-
-
-  ngOnInit() {
->>>>>>> 79134dd7c386723d1d68158c2174da3b26d6bc70
     var access_token = sessionStorage.getItem('access_token');
     $.ajax(
       {
@@ -58,11 +49,8 @@ export class PlaylistPage implements OnInit {
         }
       });
   }
-<<<<<<< HEAD
   constructor(public navCtrl: NavController,private alertCtrl: AlertController) {
   }
-=======
->>>>>>> 79134dd7c386723d1d68158c2174da3b26d6bc70
 
 
 
@@ -71,11 +59,7 @@ export class PlaylistPage implements OnInit {
     var access_token = sessionStorage.getItem('access_token');
     var name = this.playlistName;
     var user_id = sessionStorage.getItem('user_id');
-<<<<<<< HEAD
     var self = this;
-=======
-
->>>>>>> 79134dd7c386723d1d68158c2174da3b26d6bc70
     $.ajax(
       {
         method: "POST",
@@ -89,17 +73,11 @@ export class PlaylistPage implements OnInit {
         }),
         success: function (result) {
           //handle
-<<<<<<< HEAD
         /// alert("Playlist Created, head over to the search page to add songs");
         self.alertPlay();
 
          //alert(JSON.stringify(result));
          sessionStorage.setItem('playlistId', result.id);
-=======
-          alert("Playlist Created, head over to the search page to add songs");
-          //alert(JSON.stringify(result));
-          sessionStorage.setItem('playlistId', result.id);
->>>>>>> 79134dd7c386723d1d68158c2174da3b26d6bc70
           var uriNew = result.uri;
           $("#playlistFrames").append("<iframe id='p4' src='https://open.spotify.com/embed?uri=" + uriNew + "' width='300' height='380' frameborder='0' allowtransparency='true'></iframe>");
           // console.log(result.tracks.items[0].uri);
