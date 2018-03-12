@@ -2,7 +2,7 @@ import { Component, DoCheck } from '@angular/core';
 import { NavController } from 'ionic-angular';
 import * as $ from 'jquery';
 //import { InAppBrowser } from '@ionic-native/in-app-browser';
-
+import { AlertController } from 'ionic-angular';
 
 @Component({
   selector: 'page-home',
@@ -19,7 +19,7 @@ export class HomePage implements DoCheck{
 
 if( window.location.hash ) {
      var access_token = window.location.hash.split("=")[1].split("&")[0];
-
+  var self =this;
     // Save data to sessionStorage
     sessionStorage.setItem('access_token', access_token);
 
@@ -43,10 +43,12 @@ if( window.location.hash ) {
           $("#img").attr("src", result.images[0].url);
           var ID = result.id;
           sessionStorage.setItem('user_id', ID);
+         // self.alertloginSuccess();
         },
         error: function(result){
-          alert("spotify fail");
-          alert(JSON.stringify(result));
+         // alert("spotify fail");
+          //alert(JSON.stringify(result));
+          self.alertloginFail();
           $('#user-profile').hide();
         }
     });
@@ -65,8 +67,25 @@ if( window.location.hash ) {
 // sessionStorage.clear();
   
  }
-constructor(public navCtrl: NavController) {
+constructor(public navCtrl: NavController,private alertCtrl: AlertController) {
 
+  }
+
+  alertloginFail() {
+    let alert = this.alertCtrl.create({
+      title: 'Login Faild',
+      message: 'Please try to login again',
+      buttons: ['Dismiss']
+    });
+   alert.present();
+  }
+  alertloginSuccess() {
+    let alert = this.alertCtrl.create({
+      title: 'Login Successful',
+      message: 'You are now logged into Tunshare',
+      buttons: ['Dismiss']
+    });
+   alert.present();
   }
 
 }
