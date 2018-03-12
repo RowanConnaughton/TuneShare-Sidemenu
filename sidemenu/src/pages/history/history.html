@@ -23,7 +23,7 @@
           <div class="input-group stylish-input-group">
             <input type="text" [(ngModel)]="song" class="form-control" id="searchSongs" (keyup.enter)="mySearch();" placeholder="Search Songs or Artists">
             <span class="input-group-addon">
-              <button (click)="mySearch();" type="submit">
+              <button ion-button (click)="mySearch();" type="submit">
                 <span class="glyphicon glyphicon-search"></span>
               </button>
             </span>
