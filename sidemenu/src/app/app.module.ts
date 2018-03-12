@@ -10,13 +10,9 @@ import { AboutPage } from '../pages/about/about';
 import { ContactPage } from '../pages/contact/contact';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import {LocationStrategy, PathLocationStrategy, APP_BASE_HREF } from '@angular/common';
-//import{CallbackPage} from '../pages/callback/callback';
-
 import { StatusBar } from '@ionic-native/status-bar';
 import { SplashScreen } from '@ionic-native/splash-screen';
 
-import { ArticleComponent } from '../pages/article/article.component';
-import { ShowArticleComponent } from '../pages/show-article/show-article';
 
 
 
@@ -27,8 +23,7 @@ export const deepLinkConfig: DeepLinkConfig = {
     {component: FavoritesPage, name: 'FavoritesPage', segment: 'favorites'},
     {component: PlaylistPage, name: 'PlaylistPage', segment: 'playlist'},
     {component: HistoryPage, name: 'HistoryPage', segment: 'history'},
-    {component: ContactPage, name: 'ContactPage', segment: 'contact'},
-   {component: ArticleComponent, name: 'ArticlePage', segment: 'article'}
+    {component: ContactPage, name: 'ContactPage', segment: 'contact'}
   ]
 };
 
@@ -45,25 +40,15 @@ export const deepLinkConfig: DeepLinkConfig = {
     PlaylistPage,
     HistoryPage,
     AboutPage,
-
     ContactPage,
-    ArticleComponent,
-    ShowArticleComponent,
-    // CallbackPage
-    ArticleComponent
-   
-    
   ],
   imports: [
     BrowserModule,
-
     IonicModule.forRoot(MyApp, {
      locationStrategy: 'path'
   }, deepLinkConfig),
     FormsModule,
     ReactiveFormsModule,
-
-    
   ],
   bootstrap: [IonicApp],
   entryComponents: [
@@ -73,11 +58,7 @@ export const deepLinkConfig: DeepLinkConfig = {
     PlaylistPage,
     HistoryPage,
     AboutPage,
-
     ContactPage,
-    ArticleComponent,
-    ArticleComponent
-  
   ],
   providers: [
     StatusBar,
