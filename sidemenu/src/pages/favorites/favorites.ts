@@ -34,7 +34,6 @@ export class FavoritesPage {
   voteUp() {
     var access_token = sessionStorage.getItem('access_token');
     var songNumber = this.songNumber - 1;
-    var alertNumber = songNumber + 1;
     var playlistId = sessionStorage.getItem('playlistId');
     var user_id = sessionStorage.getItem('user_id');
     var self =this;

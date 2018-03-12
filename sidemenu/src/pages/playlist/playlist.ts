@@ -96,7 +96,7 @@ export class PlaylistPage implements OnInit {
   alertPlay() {
     let alert = this.alertCtrl.create({
       title: 'Playlist Created',
-      message: 'head over to the search page to add songs',
+      message: 'Head over to the Search page to add songs',
       buttons: ['Dismiss']
     });
    alert.present();
@@ -105,7 +105,7 @@ export class PlaylistPage implements OnInit {
   alertlog() {
     let alert = this.alertCtrl.create({
       title: 'Please Login',
-      message: 'head over to the Home page to Login',
+      message: 'Head over to the Home page to Login',
       buttons: ['Dismiss']
     });
    alert.present();
