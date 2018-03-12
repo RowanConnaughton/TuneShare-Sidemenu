@@ -60,7 +60,7 @@ if( window.location.hash ) {
 // // Remove all saved data from sessionStorage
 // sessionStorage.clear();
   
- }
+ 
 constructor(public navCtrl: NavController,private alertCtrl: AlertController) {
 
   }
