@@ -1,26 +1,22 @@
-
-
 <ion-header>
   <ion-navbar hideBackButton>
     <button ion-button menuToggle>
       <ion-icon name="menu"></ion-icon>
     </button>
     <ion-title>
-      Favorites
+      Favorite
     </ion-title>
   </ion-navbar>
 </ion-header>
 <ion-content padding id="page2">
-  <h1>Here are your Favourite spotify playlists!</h1>
-  <!-- <button (click)="Playlists();" type="submit">Load Your Playlists</button> -->
-
-
-  <ul>
-      <li> 
-        <iframe id="p1" src="https://open.spotify.com/embed/artist/3Mcii5XWf6E0lrY3Uky4cA"
-        width="300" height="380" frameborder="0" allowtransparency="true"></iframe>
+  <h1>Here is your current Playlist!</h1>
+  <div id="content">
+    <ul>
+      <li>
+        <iframe id="p1" src="https://open.spotify.com/embed/artist/3Mcii5XWf6E0lrY3Uky4cA" width="300" height="380" frameborder="0"
+          allowtransparency="true"></iframe>
       </li>
-    
+
       <!-- <li>
         <iframe id="p2" src="https://open.spotify.com/embed/artist/3Mcii5XWf6E0lrY3Uky4cA"
         width="300" height="380" frameborder="0" allowtransparency="true"></iframe></li>
@@ -29,16 +25,19 @@
           width="300" height="380" frameborder="0" allowtransparency="true"></iframe>
       </li> -->
     </ul>
-    <div class="input-group stylish-input-group">
-      <label>click here to</label>
+    <div class="input-group stylish-input-group" id="input">
+      <label>Song to Vote up the Playlist</label>
       <input type="number" [(ngModel)]="songNumber" class="form-control" id="voteUp" (keyup.enter)="voteUp();" placeholder="Song number on Playlist">
-      <button (click)="voteUp();" type="submit">Vote!</button>
+      <div id="btnVote">
+        <button id="voteBtn" (click)="voteUp();" type="submit" class="btn btn btn-info btn-lg">Vote!</button>
+      </div>
     </div>
-
+  </div>
 </ion-content>
 
 <ion-footer>
-    <ion-toolbar>
-      <ion-title><ion-icon name="heart"></ion-icon> FAVOURITES</ion-title>
-    </ion-toolbar>
-  </ion-footer>
+  <ion-toolbar>
+    <ion-title>
+      <ion-icon name="heart"></ion-icon>Vote songs in your Playlist</ion-title>
+  </ion-toolbar>
+</ion-footer>

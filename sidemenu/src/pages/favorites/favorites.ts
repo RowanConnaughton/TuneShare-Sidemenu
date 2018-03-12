@@ -3,11 +3,6 @@ import { /*IonicPage,*/ NavController } from 'ionic-angular';
 import * as $ from 'jquery';
 
 
-//@IonicPage({
-//name: 'favourites',
-//segment: 'favourites'
-//})
-
 @Component({
   selector: 'page-favorites',
   templateUrl: 'favorites.html'
@@ -40,28 +35,18 @@ export class FavoritesPage {
           //handle
           alert("Song " + alertNumber + " Voted, please wait as we move it up the playlist");
           // alert(JSON.stringify(result));
-
           console.log(result);
-
         },
         error: function (result) {
           //alert("Problem searching for Songs");
           alert(JSON.stringify(result));
-
         }
       });
   }
- 
-  // playlistSource(){
-  //   var playlistSource = sessionStorage.getItem('playlistUri');
-  //   $("#p1").attr("src", "https://open.spotify.com/embed?uri=" + playlistSource);
 
-  // }
 
   ionViewWillEnter() {
-
     var access_token = sessionStorage.getItem('access_token');
-
 
     $.ajax(
       {
@@ -71,39 +56,26 @@ export class FavoritesPage {
           'Authorization': 'Bearer ' + access_token,
           'Content-Type': 'application/json'
         },
-
         success: function (result) {
-
           //handle
           //alert("Here are some your Playlists");
           alert(JSON.stringify(result));
           console.log(result);
-
-
           var uri1 = result.items[0].uri;
-         //sessionStorage.setItem('playlistUri', uri1);
           var uri2 = result.items[1].uri;
           var uri3 = result.items[2].uri;
 
           //set current playlistId
           //sessionStorage.setItem('CurrentPlaylistId', result.items[0].id);
-
           $("#p1").attr("src", "https://open.spotify.com/embed?uri=" + uri1);
           $("#p2").attr("src", "https://open.spotify.com/embed?uri=" + uri2);
           $("#p3").attr("src", "https://open.spotify.com/embed?uri=" + uri3);
-
-
-
         },
         error: function (result) {
           //alert("Please login on Homepage");
           alert(JSON.stringify(result));
           // sessionStorage.setItem('playlistId', result.items[0].id);
-
         }
       });
-
   }
-
-
 }
