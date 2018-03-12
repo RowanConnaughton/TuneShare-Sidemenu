@@ -1,6 +1,7 @@
 import { Component } from '@angular/core';
 import { NavController } from 'ionic-angular';
 import * as $ from 'jquery';
+import { AlertController } from 'ionic-angular';
 
 
 @Component({
@@ -9,13 +10,39 @@ import * as $ from 'jquery';
 })
 export class HistoryPage {
   song: string;
-  constructor(public navCtrl: NavController) {
+  constructor(public navCtrl: NavController,private alertCtrl: AlertController) {
   }
 
-   
+  alertTrackAdded() {
+    let alert = this.alertCtrl.create({
+      title: 'Song Added',
+      message: 'Song added to playlist',
+      buttons: ['Dismiss']
+    });
+   alert.present();
+  }
+
+  alertFailedTrackAdded() {
+    let alert = this.alertCtrl.create({
+      title: 'Failed to Add Song',
+      message: 'Failed to add song to playlist',
+      buttons: ['Dismiss']
+    });
+   alert.present();
+  }
+
+  alertFailedSearch() {
+    let alert = this.alertCtrl.create({
+      title: 'Failed to Search For Song',
+      message: 'Problem searching for Songs',
+      buttons: ['Dismiss']
+    });
+   alert.present();
+  }
     
 
   addTrack1(){
+    var self =this;
     var access_token = sessionStorage.getItem('access_token');
     var playlistId = sessionStorage.getItem('playlistId');
     var user_id = sessionStorage.getItem('user_id');
@@ -30,18 +57,20 @@ export class HistoryPage {
         contentType: 'application/json',
         success: function (result) {
           //handle
-          alert("Song added, go to favourites to view your playlist");
+         // alert("Song added, go to favourites to view your playlist");
+          self.alertTrackAdded();
           
         },
         error: function (result) {
-          alert("spotify fail");
-          alert(JSON.stringify(result));
-
+         // alert("spotify fail");
+         // alert(JSON.stringify(result));
+         self.alertFailedTrackAdded();
         }
       });
     }
 
     addTrack2(){
+      var self =this;
       var access_token = sessionStorage.getItem('access_token');
       var playlistId = sessionStorage.getItem('playlistId');
       var user_id = sessionStorage.getItem('user_id');
@@ -57,18 +86,20 @@ export class HistoryPage {
           contentType: 'application/json',
           success: function (result) {
             //handle
-            alert("Song added, go to favourites to view your playlist");
-            
+            //alert("Song added, go to favourites to view your playlist");
+            self.alertTrackAdded();
           },
           error: function (result) {
-            alert("spotify fail");
-            alert(JSON.stringify(result));
+           // alert("spotify fail");
+            //alert(JSON.stringify(result));
+            self.alertFailedTrackAdded();
   
           }
         });
       }
 
       addTrack3(){
+        var self = this;
         var access_token = sessionStorage.getItem('access_token');
         var playlistId = sessionStorage.getItem('playlistId');
         var user_id = sessionStorage.getItem('user_id');
@@ -84,18 +115,19 @@ export class HistoryPage {
             contentType: 'application/json',
             success: function (result) {
               //handle
-              alert("Song added, go to favourites to view your playlist");
-              
+             // alert("Song added, go to favourites to view your playlist");
+             self.alertTrackAdded();
             },
             error: function (result) {
-              alert("spotify fail");
-              alert(JSON.stringify(result));
-    
+              //alert("spotify fail");
+             // alert(JSON.stringify(result));
+             self.alertFailedTrackAdded();
             }
           });
         }
 
         addTrack4(){
+          var self = this;
           var access_token = sessionStorage.getItem('access_token');
           var playlistId = sessionStorage.getItem('playlistId');
           var user_id = sessionStorage.getItem('user_id');
@@ -111,12 +143,13 @@ export class HistoryPage {
               contentType: 'application/json',
               success: function (result) {
                 //handle
-                alert("Song added, go to favourites to view your playlist");
-                
+               // alert("Song added, go to favourites to view your playlist");
+               self.alertTrackAdded();
               },
               error: function (result) {
-                alert("Failed to add song");
-                alert(JSON.stringify(result));
+                //alert("Failed to add song");
+                //alert(JSON.stringify(result));
+                self.alertFailedTrackAdded();
       
               }
             });
@@ -127,6 +160,7 @@ export class HistoryPage {
     // console.log( "Test::song: " + this.song);
     var access_token = sessionStorage.getItem('access_token');
     var song = this.song;
+    var self = this;
 
     $.ajax(
       {
@@ -154,8 +188,9 @@ export class HistoryPage {
           $("#track4").attr("src", "https://open.spotify.com/embed?uri=" + uri4);
         },
         error: function (result) {
-          alert("Problem searching for Songs");
+          //alert("Problem searching for Songs");
           //alert(JSON.stringify(result));
+          self.alertFailedSearch();
 
         }
       });

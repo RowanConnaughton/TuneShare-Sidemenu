@@ -1,7 +1,7 @@
 import { Component } from '@angular/core';
 import { /*IonicPage,*/ NavController } from 'ionic-angular';
 import * as $ from 'jquery';
-
+import { AlertController } from 'ionic-angular';
 
 @Component({
   selector: 'page-favorites',
@@ -9,8 +9,26 @@ import * as $ from 'jquery';
 })
 export class FavoritesPage {
   songNumber: number;
-  constructor(public navCtrl: NavController) {
+  constructor(public navCtrl: NavController,private alertCtrl: AlertController) {
   }
+
+  alertlog() {
+    let alert = this.alertCtrl.create({
+      title: 'Please Login',
+      message: 'head over to the Home page to Login',
+      buttons: ['Dismiss']
+    });
+   alert.present();
+  }
+  alertVote() {
+    let alert = this.alertCtrl.create({
+      title: 'Song Voted',
+      message: 'please wait as we move it up the playlist',
+      buttons: ['Dismiss']
+    });
+   alert.present();
+  }
+
 
 
   voteUp() {
@@ -19,7 +37,7 @@ export class FavoritesPage {
     var alertNumber = songNumber + 1;
     var playlistId = sessionStorage.getItem('playlistId');
     var user_id = sessionStorage.getItem('user_id');
-
+    var self =this;
     $.ajax(
       {
         method: "PUT",
@@ -33,8 +51,9 @@ export class FavoritesPage {
         }),
         success: function (result) {
           //handle
-          alert("Song " + alertNumber + " Voted, please wait as we move it up the playlist");
-          // alert(JSON.stringify(result));
+         // alert("Song "+alertNumber+" Voted, please wait as we move it up the playlist");
+         // alert(JSON.stringify(result));
+         self.alertVote();
           console.log(result);
         },
         error: function (result) {
@@ -47,6 +66,7 @@ export class FavoritesPage {
 
   ionViewWillEnter() {
     var access_token = sessionStorage.getItem('access_token');
+    var self = this;
 
     $.ajax(
       {
@@ -71,9 +91,10 @@ export class FavoritesPage {
           $("#p3").attr("src", "https://open.spotify.com/embed?uri=" + uri3);
         },
         error: function (result) {
-
-          alert(JSON.stringify(result));
+          //alert("Please login on Homepage");
+         // alert(JSON.stringify(result));
           // sessionStorage.setItem('playlistId', result.items[0].id);
+          self.alertlog();
         }
       });
   }
