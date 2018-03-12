@@ -16,7 +16,6 @@
     <head>
         <ion-title>Spotify Login</ion-title>
         <link rel="stylesheet" href="//netdna.bootstrapcdn.com/bootstrap/3.1.1/css/bootstrap.min.css">
-
     </head>
     <script src="//cdnjs.cloudflare.com/ajax/libs/handlebars.js/2.0.0-alpha.1/handlebars.min.js"></script>
 </ion-content>
@@ -29,9 +28,9 @@
         <h1>Welcome to TuneShare!</h1>
         <h3>Please log in with your Spotify account and TuneShare will take care of the rest...</h3>
         <img src="https://site-images.similarcdn.com/url?url=https%3A%2F%2Flh3.googleusercontent.com%2Fk0TvDOSUvC-BfUWe7SA5kuVbKUprJAJqNxrmn1U9F0ouMbbNV9w_ntLfJAZAHEk2Pftx%3Dw256&h=873381765033527848"
-             alt="Music icon" width="300" height="250">
+            alt="Music icon" width="300" height="250">
         <div>
-            <a ion-button href="https://accounts.spotify.com/authorize?client_id=64f2608e81b54dd6b67e8340e8b548b9&redirect_uri=http%3A%2F%2Flocalhost%3A8100&response_type=token&state=1234567890123456&scope=playlist-modify-public"
+            <a href="https://accounts.spotify.com/authorize?client_id=64f2608e81b54dd6b67e8340e8b548b9&redirect_uri=http%3A%2F%2Flocalhost%3A8100&response_type=token&state=1234567890123456&scope=playlist-modify-public,playlist-read-collaborative,playlist-read-private"
                 class="btn btn-primary btn-lg" id="btn-login">Log in with Spotify</a>
         </div>
     </div>
@@ -56,7 +55,7 @@
 
     <script src="//cdnjs.cloudflare.com/ajax/libs/handlebars.js/2.0.0-alpha.1/handlebars.min.js"></script>
     <script src="http://code.jquery.com/jquery-1.10.1.min.js"></script>
-   
+
 </ion-content>
 
 
@@ -64,6 +63,6 @@
 <ion-footer>
     <ion-toolbar>
         <ion-title>
-            <ion-icon name="home"></ion-icon>HOME</ion-title>
+            <ion-icon name="home"></ion-icon> Home</ion-title>
     </ion-toolbar>
 </ion-footer>
