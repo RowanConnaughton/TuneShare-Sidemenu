@@ -1,106 +1,69 @@
  
- <ion-header>
-  <ion-navbar hideBackButton>
-    <button ion-button menuToggle>
-      <ion-icon name="menu"></ion-icon>
-    </button>
-    <ion-title>
-      Home
-    </ion-title>
-  </ion-navbar>
+<ion-header>
+    <ion-navbar hideBackButton>
+        <button ion-button menuToggle>
+            <ion-icon name="menu"></ion-icon>
+        </button>
+        <ion-title>
+            TuneShare
+        </ion-title>
+    </ion-navbar>
 </ion-header>
- 
- <!--Code for Spotify Login -->
- <ion-content padding id="page1">
- <head>
- <ion-title>Spotify Login</ion-title>
- <link rel="stylesheet" href="//netdna.bootstrapcdn.com/bootstrap/3.1.1/css/bootstrap.min.css">
- 
-</head>
-<script src="//cdnjs.cloudflare.com/ajax/libs/handlebars.js/2.0.0-alpha.1/handlebars.min.js"></script>
+
+<!--Code for Spotify Login -->
+<ion-content padding id="page1">
+
+    <head>
+        <ion-title>Spotify Login</ion-title>
+        <link rel="stylesheet" href="//netdna.bootstrapcdn.com/bootstrap/3.1.1/css/bootstrap.min.css">
+
+    </head>
+    <script src="//cdnjs.cloudflare.com/ajax/libs/handlebars.js/2.0.0-alpha.1/handlebars.min.js"></script>
 </ion-content>
 
 <ion-content padding>
 
- <!-- code to render json -->
- 
-   <div id="logIn">
-  <h1>Displaying User Data</h1>
-  <p>Log in with your Spotify account and TuneShare will display information about you fetched using Spotify</p>
-  <a href="https://accounts.spotify.com/authorize?client_id=64f2608e81b54dd6b67e8340e8b548b9&redirect_uri=http%3A%2F%2Flocalhost%3A8100&response_type=token&state=1234567890123456&scope=playlist-modify-public" class="btn btn-primary" id="btn-login">Log in with Spotify</a>
-  
-</div>
+    <!-- code to render json data -->
 
- <div id="loggedIn">
-   <ion-card id="card">
-      <img id="img"  src=""/>
-  <ion-card-content>
-    <div id="result">
-      <h1>You are logged in as</h1>
-      <h2 id="name"></h2>
-      <h3 id="id"></h3>
-      <h3 id="email" ></h3>
-      <h3 id="country"></h3>
-    
-  </div>
-</ion-card-content>
-</ion-card>
-  
-</div>
+    <div id="logIn">
+        <h1>Welcome to TuneShare!</h1>
+        <h3>Please log in with your Spotify account and TuneShare will take care of the rest...</h3>
+        <img src="https://site-images.similarcdn.com/url?url=https%3A%2F%2Flh3.googleusercontent.com%2Fk0TvDOSUvC-BfUWe7SA5kuVbKUprJAJqNxrmn1U9F0ouMbbNV9w_ntLfJAZAHEk2Pftx%3Dw256&h=873381765033527848"
+             alt="Music icon" width="300" height="250">
+        <div>
+            <a href="https://accounts.spotify.com/authorize?client_id=64f2608e81b54dd6b67e8340e8b548b9&redirect_uri=http%3A%2F%2Flocalhost%3A8100&response_type=token&state=1234567890123456&scope=playlist-modify-public"
+                class="btn btn-primary btn-lg" id="btn-login">Log in with Spotify</a>
+        </div>
+    </div>
 
+    <div id="loggedIn">
+        <ion-card id="card">
+            <img id="img" src="" />
+            <ion-card-content>
+                <div id="result">
+                    <h2>You are now logged in as</h2>
+                    <h1 id="name"></h1>
+                    <h3 id="id"></h3>
+                    <h3 id="email"></h3>
+                    <h3 id="country"></h3>
 
+                </div>
+            </ion-card-content>
+        </ion-card>
 
-
-  
-
+    </div>
 
 
-<script src="//cdnjs.cloudflare.com/ajax/libs/handlebars.js/2.0.0-alpha.1/handlebars.min.js"></script>
-<script src="http://code.jquery.com/jquery-1.10.1.min.js"></script>
-<!-- <script>
-    var templateSource = document.getElementById('result-template').innerHTML,
-        template = Handlebars.compile(templateSource),
-        resultsPlaceholder = document.getElementById('result'),
-        loginButton = document.getElementById('btn-login');
-    
-    loginButton.addEventListener('click', function() {
-        login(function(accessToken) {
-            getUserData(accessToken)
-                .then(function(response) {
-                    loginButton.style.display = 'none';
-                    resultsPlaceholder.innerHTML = template(response);
-                });
-            });
-    });
-
-        var url = getLoginURL([
-            'user-read-email'
-        ]);
-        
-        var width = 450,
-            height = 730,
-            left = (screen.width / 2) - (width / 2),
-            top = (screen.height / 2) - (height / 2);
-    
-        window.addEventListener("message", function(event) {
-            var hash = JSON.parse(event.data);
-            if (hash.type == 'access_token') {
-                callback(hash.access_token);
-            }
-        }, false);
-        
-        var w = window.open(url,
-               'Spotify',
-              'menubar=no,location=no,resizable=no,scrollbars=no,status=no, width=' + width + ', height=' + height + ', top=' + top + ', left=' + left
-                           );
-    
-</script> -->
+    <script src="//cdnjs.cloudflare.com/ajax/libs/handlebars.js/2.0.0-alpha.1/handlebars.min.js"></script>
+    <script src="http://code.jquery.com/jquery-1.10.1.min.js"></script>
+   
 </ion-content>
 
 
- 
+
 <ion-footer>
     <ion-toolbar>
-      <ion-title> <ion-icon name="home"></ion-icon> HOME</ion-title>
+        <ion-title>
+            <ion-icon name="home"></ion-icon>HOME</ion-title>
     </ion-toolbar>
-  </ion-footer>
+</ion-footer>

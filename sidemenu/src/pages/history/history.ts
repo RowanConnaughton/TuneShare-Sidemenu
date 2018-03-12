@@ -3,6 +3,7 @@ import { NavController } from 'ionic-angular';
 import * as $ from 'jquery';
 import { AlertController } from 'ionic-angular';
 
+
 @Component({
   selector: 'page-history',
   templateUrl: 'history.html'

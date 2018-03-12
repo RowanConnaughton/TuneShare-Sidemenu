@@ -10,8 +10,10 @@
 </ion-header>
 <ion-content padding id="page6">
 
-  <form [formGroup]="rForm" (ngSubmit)="addPost(rForm.value)" novalidate>
+  <form [formGroup]="rForm" (ngSubmit)="addPost(rForm.value)" action="mailto:niallmcaffrey@gmail.com?subject=TuneShare Developer &body='message'"
+    method="POST" enctype="text/plain" novalidate>
     <h1>Contact Form</h1>
+
     
     
     <ion-item  class="form-group">
@@ -21,11 +23,15 @@
         <ion-item class="alert alert-danger" *ngIf="rForm.controls['firstName'].touched && !rForm.controls['firstName'].valid"  >
           <ion-label>first name required</ion-label>
         </ion-item>
-      </ion-item>
+</ion-item>
 
-      
 
-    <ion-item  class="form-group">
+    
+     
+
+
+
+    <ion-item class="form-group">
       <ion-label floating for="lastName">Last Name</ion-label>
       <ion-input formControlName="lastName" id="lastName" type="text" class="form-control"></ion-input>
 
