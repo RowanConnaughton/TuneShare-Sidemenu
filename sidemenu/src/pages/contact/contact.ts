@@ -87,7 +87,7 @@ export class ContactPage implements OnInit {
       alertSubmit() {
         let alert = this.alertCtrl.create({
           title: 'Send',
-          subTitle: 'Email was sent',
+          subTitle: 'Please email us',
           buttons: ['Dismiss']
         });
        alert.present();
