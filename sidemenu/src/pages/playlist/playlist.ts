@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import { NavController } from 'ionic-angular';
+import { NavController, AlertController } from 'ionic-angular';
 import * as $ from 'jquery';
 
 @Component({
@@ -9,6 +9,19 @@ import * as $ from 'jquery';
 export class PlaylistPage implements OnInit{
   playlistName: string;
   
+
+  constructor(public navCtrl: NavController,
+              private alertCtrl: AlertController){ }
+
+        presentAlert() {
+        let alert = this.alertCtrl.create({
+            title: 'Low battery',
+            subTitle: '10% of battery remaining',
+            buttons: ['Dismiss']
+            });
+            alert.present();
+            }
+
   ngOnInit(){
     var access_token = sessionStorage.getItem('access_token');
     $.ajax(
@@ -29,7 +42,7 @@ export class PlaylistPage implements OnInit{
           $("#p1").attr("src", "https://open.spotify.com/embed?uri=" + uri1);
           $("#p2").attr("src", "https://open.spotify.com/embed?uri=" + uri2);
           $("#p3").attr("src", "https://open.spotify.com/embed?uri=" + uri3);
-         
+        
         
           // console.log(result.tracks.items[0].uri);
         },
@@ -40,8 +53,7 @@ export class PlaylistPage implements OnInit{
         }
       });
   }
-  constructor(public navCtrl: NavController) {
-  }
+  
 
  
   Create() {

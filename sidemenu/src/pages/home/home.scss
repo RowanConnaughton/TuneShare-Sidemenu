@@ -41,7 +41,9 @@
 #card{
   display: none;
 }
-
+#logIn{
+  text-align:center;
+}
 .ion-content{
   padding: 10px;
 }
@@ -49,4 +51,8 @@
 img {
     margin-bottom: 1em;
     max-width: 250px;
+    border-radius: 50%;
+}
+#btn-login{
+  text-align:bottom;
 }

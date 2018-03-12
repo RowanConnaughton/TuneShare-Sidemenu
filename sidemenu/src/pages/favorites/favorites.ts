@@ -17,10 +17,11 @@ export class FavoritesPage {
   constructor(public navCtrl: NavController) {
   }
 
+
   voteUp() {
     var access_token = sessionStorage.getItem('access_token');
-    var songNumber = this.songNumber-1;
-    var alertNumber = songNumber+1;
+    var songNumber = this.songNumber - 1;
+    var alertNumber = songNumber + 1;
     var playlistId = sessionStorage.getItem('playlistId');
     var user_id = sessionStorage.getItem('user_id');
 
@@ -32,13 +33,13 @@ export class FavoritesPage {
           'Authorization': 'Bearer ' + access_token
         },
         contentType: 'application/json',
-        data:JSON.stringify({
-         "range_start" : songNumber, "insert_before" : 2 
+        data: JSON.stringify({
+          "range_start": songNumber, "insert_before": 2
         }),
         success: function (result) {
           //handle
-          alert("Song "+alertNumber+" Voted, please wait as we move it up the playlist");
-         // alert(JSON.stringify(result));
+          alert("Song " + alertNumber + " Voted, please wait as we move it up the playlist");
+          // alert(JSON.stringify(result));
 
           console.log(result);
 
@@ -50,8 +51,14 @@ export class FavoritesPage {
         }
       });
   }
+ 
+  // playlistSource(){
+  //   var playlistSource = sessionStorage.getItem('playlistUri');
+  //   $("#p1").attr("src", "https://open.spotify.com/embed?uri=" + playlistSource);
 
-  ngOnInit() {
+  // }
+
+  ionViewWillEnter() {
 
     var access_token = sessionStorage.getItem('access_token');
 
@@ -69,16 +76,17 @@ export class FavoritesPage {
 
           //handle
           //alert("Here are some your Playlists");
-          //alert(JSON.stringify(result));
+          alert(JSON.stringify(result));
           console.log(result);
 
 
           var uri1 = result.items[0].uri;
+         //sessionStorage.setItem('playlistUri', uri1);
           var uri2 = result.items[1].uri;
           var uri3 = result.items[2].uri;
 
           //set current playlistId
-          sessionStorage.setItem('CurrentPlaylistId', result.items[0].id);
+          //sessionStorage.setItem('CurrentPlaylistId', result.items[0].id);
 
           $("#p1").attr("src", "https://open.spotify.com/embed?uri=" + uri1);
           $("#p2").attr("src", "https://open.spotify.com/embed?uri=" + uri2);
@@ -88,7 +96,7 @@ export class FavoritesPage {
 
         },
         error: function (result) {
-          alert("Please login on Homepage");
+          //alert("Please login on Homepage");
           alert(JSON.stringify(result));
           // sessionStorage.setItem('playlistId', result.items[0].id);
 
