@@ -9,11 +9,11 @@
   </ion-navbar>
 </ion-header>
 <ion-content padding id="page3">
-  
-    <h1>Create a Playlist</h1>
-    <div class="input-group stylish-input-group">
+
+  <h1>Create a Playlist</h1>
+  <div class="input-group stylish-input-group">
     <label>Give your Playlist a name..</label>
-    <input type="text" name="playlistName" [(ngModel)] = "playlistName"/>
+    <input type="text" name="playlistName" [(ngModel)]="playlistName" />
     <button (click)="Create();" type="submit" class="btn btn btn-info btn-md">Create</button>
   </div>
   <div>
@@ -27,8 +27,8 @@
           frameborder="0" allowtransparency="true"></iframe>
       </li>
       <li>
-        <iframe id="p3" src="https://open.spotify.com/embed/user/spotify/playlist/2MeKajUftW93LeUCXcVUTY" width="300" height="380" frameborder="0"
-          allowtransparency="true"></iframe>
+        <iframe id="p3" src="https://open.spotify.com/embed/user/spotify/playlist/2MeKajUftW93LeUCXcVUTY" width="300" height="380"
+          frameborder="0" allowtransparency="true"></iframe>
       </li>
     </ul>
   </div>

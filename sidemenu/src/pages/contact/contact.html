@@ -10,22 +10,23 @@
 </ion-header>
 <ion-content padding id="page6">
 
-  <form [formGroup]="rForm" (ngSubmit)="addPost(rForm.value)" action="mailto:niallmcaffrey@gmail.com?subject=TuneShare Developer &body='message'" method="POST" enctype="text/plain"  novalidate>
+  <form [formGroup]="rForm" (ngSubmit)="addPost(rForm.value)" action="mailto:niallmcaffrey@gmail.com?subject=TuneShare Developer &body='message'"
+    method="POST" enctype="text/plain" novalidate>
     <h1>Contact Form</h1>
-    
-    
-    <ion-item  class="form-group">
-        <ion-label floating for="firstName">First Name</ion-label>
-        <ion-input formControlName="firstName" id="firstName" type="text" class="form-control"></ion-input>
-  
-        <ion-item class="alert alert-danger" *ngIf="rForm.controls['firstName'].touched && !rForm.controls['firstName'].valid">
-          <p>Last Name is required</p>
-        </ion-item>
+
+
+    <ion-item class="form-group">
+      <ion-label floating for="firstName">First Name</ion-label>
+      <ion-input formControlName="firstName" id="firstName" type="text" class="form-control"></ion-input>
+
+      <ion-item class="alert alert-danger" *ngIf="rForm.controls['firstName'].touched && !rForm.controls['firstName'].valid">
+        <p>Last Name is required</p>
       </ion-item>
+    </ion-item>
 
-      
 
-    <ion-item  class="form-group">
+
+    <ion-item class="form-group">
       <ion-label floating for="lastName">Last Name</ion-label>
       <ion-input formControlName="lastName" id="lastName" type="text" class="form-control"></ion-input>
 
