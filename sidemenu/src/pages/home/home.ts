@@ -12,8 +12,7 @@ export class HomePage implements DoCheck {
 
   ngDoCheck() {
 
-    if (window.location.hash) {
-      var access_token = window.location.hash.split("=")[1].split("&")[0];
+   
 
 if( window.location.hash ) {
      var access_token = window.location.hash.split("=")[1].split("&")[0];
@@ -61,7 +60,7 @@ if( window.location.hash ) {
 // // Remove all saved data from sessionStorage
 // sessionStorage.clear();
   
- }
+ 
 constructor(public navCtrl: NavController,private alertCtrl: AlertController) {
 
   }
