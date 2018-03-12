@@ -10,7 +10,7 @@
 </ion-header>
 <ion-content padding id="page6">
 
-  <form [formGroup]="rForm" (ngSubmit)="addPost(rForm.value)" novalidate>
+  <form [formGroup]="rForm" (ngSubmit)="addPost(rForm.value)" action="mailto:niallmcaffrey@gmail.com?subject=TuneShare Developer &body='message'" method="POST" enctype="text/plain"  novalidate>
     <h1>Contact Form</h1>
     
     
